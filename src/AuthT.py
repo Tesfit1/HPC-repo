@@ -13,38 +13,45 @@ CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 API_VERSION = os.getenv("API_VERSION")
 BASE_URL = os.getenv("BASE_URL")
 
-#Auth
+# Auth
 
+# Define the URL and headers
 url =  f"{BASE_URL}/api/{API_VERSION}/auth"
 headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'Accept': 'application/json',
 }
 
-# Define the data
+# Data definition
 data = {
     'username': CLIENT_ID,
     'password': CLIENT_SECRET
 }
 
-# Send the POST request
+# POST request
 response = requests.post(url, headers=headers, data=data)
 
-# Print the response
+# response
 print(f"Authentication response: " + str(response.json()))
-# Access the cookies
-response_json = response.json()
 
-# Store the session ID
-session_id = response_json['sessionId']  # replace 'session_id' with the actual cookie name
-load_dotenv()
+# session ID
+session_id = response.json()['sessionId']  
 
-# Step 2: Write the session_id to the .env file
-env_file_path = ".env"  # Path to your .env file
+# .env file read
+env_file_path = ".env"  
 
-# Open the .env file in append mode, and write the new session_id (if it's not already there)
-with open(env_file_path, "a") as env_file:
-    env_file.write(f"SESSION_ID={session_id}\n")
+if os.path.exists(env_file_path):
+    with open(env_file_path, "r") as env_file:
+        lines = env_file.readlines()
 
+# Remove any existing SESSION_ID 
+updated_lines = [line for line in lines if not line.startswith("SESSION_ID=")]
 
+# Add the new SESSION_ID
+updated_lines.append(f"SESSION_ID={session_id}\n")
 
+#  .env file overwrite
+with open(env_file_path, "w") as env_file:
+    env_file.writelines(updated_lines)
+
+print(f"Updated .env file with new SESSION_ID.")
