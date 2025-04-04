@@ -1,0 +1,11 @@
+Subject Number|Folder|Birth Year|Age|Sex|Child Bearing Potential|Gender|Ethnicity|American Indian or Alaska Native|Asian|Black or African American|Native Hawaiian or Other Pacific Islander|White|1234-5678
+10111|V01|1986|36|Male||Male|Not Hispanic or Latino|||||White
+10112|V01|1987|35|Female||Not answered|Not Hispanic or Latino|American Indian or Alaska Native||||White
+10113|V01|1988|34|Female|Yes|Other,Subject feels like a female today|Not Hispanic or Latino|||Black or African American|||  
+10211|V01|1983|38|Male|||Not Hispanic or Latino|American Indian or Alaska Native||||White
+10212|V01|1987|35|Male|||Not Hispanic or Latino|||||White
+10213|V01|1974|48|Male|||Not Hispanic or Latino|||||White
+10311|V01|1991|31|Male|||Not Hispanic or Latino|||||White
+10312|V01|1969|53|Female|Yes|Other,Subject feels like a female today|Not Hispanic or Latino|||Black or African American||| 
+10313|V01|1991|31|Female||Not answered|Not Hispanic or Latino|American Indian or Alaska Native||||White
+
