@@ -71,7 +71,7 @@ response_retrieve_subjects = requests.get(subjects_url, headers=headers)
 json_response_retrieve_subjects = response_retrieve_subjects.json()
 
 # Load JSON
-#print(json.dumps(json_response_retrieve_subjects, indent=4))  # Prettify JSON
+print(json.dumps(json_response_retrieve_subjects, indent=4))  # Prettify JSON
 
 # Extract the 'subjects' key
 

@@ -1,6 +1,8 @@
 import subprocess
+import os
 
-python_path = "C:\\Users\\gebresla\\PycharmProjects\\HPC\\venv\\Scripts\\python.exe"
+python_path = "C:\\Program Files\\Python311\\python.exe"
+# python_path = os.getenv("PYTHON_SCRIPTS_PATH")
 # script = ["AuthT.py", "CreateCasebookT.py","Event_DM_T.py","COMMON_Ev_Date.py","Event_IC_T.py","VisitTwoDate.py","VitalSignScreening.py","Inc_Ex.py","Eligibility.py","Eventgroups.py","VisitOneDate.py","SamplingTimePoints.py","DrugAdmin.py","SubstanceUse.py","VitalSignTreatment.py","SetEventDateEndOfStudy.py","EndOfTreatment.py"]
 script = ["AuthT.py", "CreateCasebookT.py","Event_IC_T.py","Eventgroups.py","EvtGroupDate.py" ,"Event_DM_T.py","VitalSignScreening.py","SubstanceUse.py"]
 
