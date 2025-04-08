@@ -1,33 +1,16 @@
 import json
-from dotenv import load_dotenv
-import requests
 import os
-from dateConv import convert_date_format
+from config import API_VERSION, BASE_URL, study_name, study_country, site, headers, convert_date_format
 import pandas as pd
-from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error, check_file_exists
-
-# Load environment variables from .env file
-load_dotenv()
-
-# Variables
-API_VERSION = os.getenv("API_VERSION")
-BASE_URL = os.getenv("BASE_URL")
-SESSION_ID = os.getenv("SESSION_ID")
-study_name = os.getenv("Study_name")
-study_country = os.getenv("Study_country")
-site = os.getenv("site")
+from error_log import  log_error, read_dataframe
+from importer import import_form
 
 # Read a comma-delimited .txt file
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
 csv_file_path = os.path.join(parent_dir, '1234-5678_TEST_HPC_IC_FULL_2024JUL101011.txt')
 
-try:
-    check_file_exists(csv_file_path)
-    df = pd.read_csv(csv_file_path, delimiter='|', dtype=str)
-except FileNotFoundError as e:
-    log_error(e)
-    raise
+df = read_dataframe(csv_file_path)
 
 df["Informed Consent Obtained"] = df["Informed Consent Obtained"].map({"Yes": "Y", "No": "N"})
 df["Informed Consent Type"] = df["Informed Consent Type"].map({"Main": "MAIN"})
@@ -95,49 +78,10 @@ for _, row in df.iterrows():
     print(json.dumps(json_body, indent=4))
     json_payloads.append(json_body)
 
-headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Authorization": f"Bearer {SESSION_ID}",
-}
-
 api_endpoint = f"{BASE_URL}/api/{API_VERSION}/app/cdm/forms/actions/setdata"
-
-def import_form(payload):
-    try:
-        # Simulate form data validation
-        if not validate_form_data(payload):
-            raise FormDataError(f"Invalid data in form {payload['form']['subject']}")
-
-        # Simulate API call
-        response = requests.post(api_endpoint, headers=headers, data=json.dumps(payload))
-        response_json = response.json()
-        if response.status_code == 200:
-            if any(error['type'] == 'INVALID_SESSION_ID'for error in response_json.get('errors', [])):
-                raise InvalidSessionIDError("Invalid or expired session ID.")
-
-        if response.status_code != 200:
-            raise APIError(f"API call failed for form {payload['form']['subject']} with status code {response.status_code}")
-
-        print(json.dumps(response_json, indent=4))
-
-    except FormDataError as e:
-        log_error(e)
-    except APIError as e:
-        log_error(e)
-    except InvalidSessionIDError as e:
-        log_error(e)
-        # Handle session ID renewal or prompt user to re-authenticate
-        print("Session ID is invalid or expired. Please renew the session ID.")
-    except Exception as e:
-        log_error(f"Unexpected error importing form {payload['form']['subject']}: {e}")
-
-def validate_form_data(payload):
-    # Add your validation logic here
-    return True  # Return False if validation fails
 
 for payload in json_payloads:
     try:
-        import_form(payload)
+        import_form(payload, api_endpoint, headers)
     except Exception as e:
         log_error(e)

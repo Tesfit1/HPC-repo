@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from requests.auth import HTTPBasicAuth
 import requests
-
+from config import API_VERSION, BASE_URL, CLIENT_ID, CLIENT_SECRET
 
 # Load environment variables from .env file
 load_dotenv()
@@ -55,3 +55,7 @@ with open(env_file_path, "w") as env_file:
     env_file.writelines(updated_lines)
 
 print(f"Updated .env file with new SESSION_ID.")
+
+
+
+
