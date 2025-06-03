@@ -2,21 +2,19 @@ import json
 from dotenv import load_dotenv
 import requests
 import os
-from dateConv import convert_date_format
 import pandas as pd
 import boto3
-from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error, check_file_exists
+from dateConv import convert_date_format
+from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error
 from io import StringIO
 from api_utils import import_form
 
 # Load environment variables
 load_dotenv()
 
-# Variables
 API_VERSION = os.getenv("API_VERSION")
 BASE_URL = os.getenv("BASE_URL")
-# SESSION_FILE = "session_id.txt"
-SESSION_FILE ='/opt/airflow/scripts/session_id.txt'
+SESSION_FILE = "session_id.txt"
 with open(SESSION_FILE) as f:
     SESSION_ID = f.read().strip()
 study_name = os.getenv("Study_name")
@@ -24,10 +22,10 @@ study_country = os.getenv("Study_country")
 site = os.getenv("site")
 aws_access = os.getenv("AWS_ACCESS_KEY_ID")
 aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
-file_name = os.getenv("Eligibility")
+file_name = os.getenv("BloodSamplingForPK")
 bucket_name = os.getenv("bucket_name")
 
-# Read eligibility data from S3
+# Read blood sampling data from S3
 s3 = boto3.client('s3', aws_access_key_id=aws_access, aws_secret_access_key=aws_secret)
 try:
     response = s3.get_object(Bucket=bucket_name, Key=file_name)
@@ -37,46 +35,49 @@ except FileNotFoundError as e:
     log_error(e)
     raise
 
-# Rename and map columns
+# Ensure required columns exist before renaming
+required_columns = ['Subject Number', 'Folder', 'Time Point', 'Sample Date', 'Sample Time', 'Comment']
+missing_columns = [col for col in required_columns if col not in df.columns]
+if missing_columns:
+    raise KeyError(f"Missing columns in input data: {missing_columns}")
+
+# Rename columns
 df = df.rename(columns={
-    'Subject Number': 'subject', 
-    'Randomized': 'DSCOMP_ELIG',
-    'Reason Non-Randomized': 'DSNCOMP_ELIG',
-    'Randomization Date': 'DSSTDAT_ELIG',
-    'Randomization Number': 'RANDNO'
-})
-df["DSCOMP_ELIG"] = df["DSCOMP_ELIG"].map({"Yes": "Y", "No": "N"})
-df["DSNCOMP_ELIG"] = df["DSNCOMP_ELIG"].map({
-    "Adverse Event": "ADVERSE EVENT",
-    "Screen Failure": "SCREEN FAILURE",
-    "Screened in Error": "SCREENED IN ERROR",
-    "Lost to Follow-Up": "LOST TO FOLLOW-UP",
-    "Withdrawal by Subject": "WITHDRAWAL BY SUBJECT",
-    "Other": "OTHER"
+    'Subject Number': 'subject',
+    'Folder': 'Folder',
+    'Time Point': 'TPT_TPT',
+    'Sample Date': 'DAT_TPT',
+    'Sample Time': 'TIM_TPT',
+    'Comment': 'COM_TPT'
 })
 
+# Add and update PERF_TPT and FAST_TPT
+df['PERF_TPT'] = "N"
+df['FAST_TPT'] = ""
+df.loc[df['DAT_TPT'].notnull(), 'PERF_TPT'] = "Y"
+
 def preprocess_dataframe(df):
-    df["DSSTDAT_ELIG"] = df["DSSTDAT_ELIG"].apply(convert_date_format)
+    df["DAT_TPT"] = df["DAT_TPT"].apply(convert_date_format)
     return df
 
 df = preprocess_dataframe(df)
 df = df.fillna("")
 
-# Build payloads: one form per eligibility record
+# Prepare JSON payloads
 json_payloads = []
+subject_event_counter = {}
 
-for idx, row in df.iterrows():
+for _, row in df.iterrows():
     subject = row['subject']
-    itemgroup = {
-        "itemgroup_name": "ig_ELIG_02_A",
-        "itemgroup_sequence": 1,
-        "items": [
-            {"item_name": "DSCOMP_ELIG", "value": row['DSCOMP_ELIG']},
-            {"item_name": "DSNCOMP_ELIG", "value": row['DSNCOMP_ELIG']},
-            {"item_name": "DSSTDAT_ELIG", "value": row['DSSTDAT_ELIG']},
-            {"item_name": "RANDNO", "value": row['RANDNO']}
-        ]
-    }
+    event = row['Folder']
+
+    # Track itemgroup_sequence per subject/event
+    key = (subject, event)
+    if key not in subject_event_counter:
+        subject_event_counter[key] = 1
+    else:
+        subject_event_counter[key] += 1
+    itemgroup_sequence = subject_event_counter[key]
 
     json_body = {
         "study_name": study_name,
@@ -88,10 +89,31 @@ for idx, row in df.iterrows():
             "study_country": study_country,
             "site": site,
             "subject": subject,
-            "eventgroup_name": "eg_COMMON",
-            "event_name": "ev_COMMON",
-            "form_name": "ELIG_02_v001",
-            "itemgroups": [itemgroup]
+            "eventgroup_name": (
+                'eg_SCREEN' if event == 'V01' else 'eg_TREAT_SD'
+            ),
+            "eventgroup_sequence": 1,
+            "event_name": (
+                'ev_V01' if event == 'V01' else
+                'ev_V02' if event == 'V02' else
+                'ev_V03' if event == 'V03' else
+                'ev_V04'
+            ),
+            "form_name": "SAMP_TPT_PK",
+            "itemgroups": [
+                {
+                    "itemgroup_name": "ig_SAMP_TPT_01_A",
+                    "itemgroup_sequence": itemgroup_sequence,
+                    "items": [
+                        {"item_name": "TPT_TPT", "value": row['TPT_TPT']},
+                        {"item_name": "PERF_TPT", "value": row['PERF_TPT']},
+                        {"item_name": "DAT_TPT", "value": row['DAT_TPT']},
+                        {"item_name": "TIM_TPT", "value": row['TIM_TPT']},
+                        {"item_name": "FAST_TPT", "value": row['FAST_TPT']},
+                        {"item_name": "COM_TPT", "value": row['COM_TPT']}
+                    ]
+                }
+            ]
         }
     }
     json_payloads.append(json_body)

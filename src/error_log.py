@@ -22,7 +22,6 @@ class InvalidSessionIDError(Exception):
     pass
 
 
-
 def log_error(exception):
     """Log the provided exception."""
     logging.error(exception)

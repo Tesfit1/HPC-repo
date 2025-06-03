@@ -3,74 +3,90 @@ from dotenv import load_dotenv
 import requests
 import os
 import pandas as pd
-from datetime import datetime
+import boto3
+from dateConv import convert_date_format
+from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error
+from io import StringIO
+from api_utils import import_form
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
-#1.Create Subjects
-# variables
 
 API_VERSION = os.getenv("API_VERSION")
 BASE_URL = os.getenv("BASE_URL")
-SESSION_ID = os.getenv("SESSION_ID")
+SESSION_FILE = "session_id.txt"
+with open(SESSION_FILE) as f:
+    SESSION_ID = f.read().strip()
 study_name = os.getenv("Study_name")
 study_country = os.getenv("Study_country")
 site = os.getenv("site")
-# Read a comma-delimited .txt file
-current_dir = os.path.dirname(os.path.abspath(__file__))
+aws_access = os.getenv("AWS_ACCESS_KEY_ID")
+aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
+file_name = os.getenv("VitalSignEOS")
+bucket_name = os.getenv("bucket_name")
 
-# Move one directory level up
-parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+# Read EOS vital sign data from S3
+s3 = boto3.client('s3', aws_access_key_id=aws_access, aws_secret_access_key=aws_secret)
+try:
+    response = s3.get_object(Bucket=bucket_name, Key=file_name)
+    file_content = response['Body'].read().decode('utf-8')
+    df = pd.read_csv(StringIO(file_content), delimiter='|', dtype=str)
+except FileNotFoundError as e:
+    log_error(e)
+    raise
 
-# Path to the CSV file
-csv_file_path = os.path.join(parent_dir, '1234-5678_TEST_HPC_VSEOS_FULL_2024JUL101145.txt')
-df = pd.read_csv(csv_file_path , delimiter='|',dtype=str)
+# Ensure required columns exist before renaming
+required_columns = [
+    'Subject Number', 'Date of Measurements', 'Weight', 'Pulse Rate',
+    'Systolic Blood Pressure', 'Diastolic Blood Pressure'
+    # Add 'Respiratory Rate', 'Temperature' if needed
+]
+missing_columns = [col for col in required_columns if col not in df.columns]
+if missing_columns:
+    raise KeyError(f"Missing columns in input data: {missing_columns}")
 
-# Rename columns while keeping original data intact
+# Rename columns
 df = df.rename(columns={
     'Subject Number': 'subject',
-    # 'Planned Time Point': 'VSTPT_2',
-    'Date of Measurements':'VSDAT_2',
-    # 'Time of Measurement':'VSTIM_1',
-    #'Height':'HEIGHT',
-    'Weight' :'WEIGHT_2',
-    'Pulse Rate':'PULSE_2',
-    'Systolic Blood Pressure':'SYSBP_2',
-    'Diastolic Blood Pressure':'DIABP_2',
-    'Respiratory Rate':'RESP_2',
-    'Temperature':'TEMP_2'
+    'Date of Measurements': 'VSDAT_2',
+    # 'Weight': 'WEIGHT_2',
+    'Pulse Rate': 'PULSE_2',
+    'Systolic Blood Pressure': 'SYSBP_2',
+    'Diastolic Blood Pressure': 'DIABP_2',
+    # 'Respiratory Rate': 'RESP_2',
+    # 'Temperature': 'TEMP_2'
 })
 
 def preprocess_dataframe(df):
-    # Convert date format
-    def convert_date_format(date_str):
-        try:
-            return datetime.strptime(date_str, "%d %b %Y").strftime("%Y-%m-%d")
-        except (ValueError, TypeError):
-            return None  # Handle missing or invalid dates
-
     df["VSDAT_2"] = df["VSDAT_2"].apply(convert_date_format)
     return df
+
 df = preprocess_dataframe(df)
-# set the event date
-#event_date = df['DSSTDAT_IC']
-#event_date = str(df['DSSTDAT_IC'].iloc[0])
-
-
 df = df.fillna("")
-#df['CHILDPOT'] = df['CHILDPOT'].replace("", None).fillna("No")
-#df["AGE"] = pd.to_numeric(df["AGE"], errors="coerce")
 
-# prepare the data to be sent
+# Prepare the data to be sent
 json_payloads = []
-current_subject = None  # Track current subject
-itemgroup_sequence = 1  # Start sequence counter
 
 for _, row in df.iterrows():
-    subject = row['subject']  
-    if subject != current_subject:
-        current_subject = subject
-        itemgroup_sequence = 1
+    subject = row['subject']
+    itemgroup = {
+        "itemgroup_name": "ig_VS_01_A_2",
+        "itemgroup_sequence": 1,
+        "items": [
+            {"item_name": "VSDAT_2", "value": row['VSDAT_2']},
+            # Uncomment if you want to include time
+            # {"item_name": "VSTIM_1", "value": row.get('VSTIM_1', "")},
+            # {"item_name": "HEIGHT", "value": row.get('HEIGHT', ""), "unit_value": "Centimeter"},
+            # {"item_name": "WEIGHT_2", "value": row['WEIGHT_2'], "unit_value": "Kilogram"},
+            {"item_name": "PULSE_2", "value": row['PULSE_2'], "unit_value": "Beats per Minute"},
+            {"item_name": "SYSBP_2", "value": row['SYSBP_2'], "unit_value": "Millimeter of Mercury"},
+            {"item_name": "DIABP_2", "value": row['DIABP_2'], "unit_value": "Millimeter of Mercury"},
+            # Uncomment if you want to include these
+            # {"item_name": "RESP_2", "value": row.get('RESP_2', ""), "unit_value": "Breaths per Minute"},
+            # {"item_name": "TEMP_2", "value": row.get('TEMP_2', ""), "unit_value": "Degree-Celsius"}
+        ]
+    }
+
     json_body = {
         "study_name": study_name,
         "reopen": True,
@@ -83,76 +99,36 @@ for _, row in df.iterrows():
             "subject": subject,
             "eventgroup_name": "eg_EOS",
             "event_name": "ev_EOS",
-            "form_name": "VS_01_v001_2",
-            "itemgroups": [
-            {
-                "itemgroup_name": "ig_VS_01_A_2",
-                "itemgroup_sequence": itemgroup_sequence,
-                "items": [
-                    {
-                        "item_name": "VSDAT_2",
-                        "value": row['VSDAT_2']
-                    },
-                    # {
-                    #     "item_name": "VSTIM_1",
-                    #     "value": row['VSTIM_1']
-                    # },
-                    #  {
-                    #     "item_name": "HEIGHT",
-                    #     "value": row['HEIGHT'],
-                    #     "unit_value":"Centimeter"
-                    # },
-                    {
-                        "item_name":"WEIGHT_2",
-                        "value": row['WEIGHT_2'],
-                        "unit_value":"Kilogram"
-                    },
-                    {
-                        "item_name" : "PULSE_2",
-                        "value": row['PULSE_2'],
-                        "unit_value":"Beats per Minute"
-                    },
-                    {
-                        "item_name" : "SYSBP_2",
-                        "value": row['SYSBP_2'],
-                        "unit_value":"Millimeter of Mercury"
-                    },
-                    {
-                        "item_name" : "DIABP_2",
-                        "value": row['DIABP_2'],
-                        "unit_value":"Millimeter of Mercury"
-                    },
-                    {
-                        "item_name" : "RESP_2",
-                        "value": row['RESP_2'],
-                        "unit_value":"Breaths per Minute"
-                    },
-                    {
-                        "item_name" : "TEMP_2",
-                        "value": row['TEMP_2'],
-                        "unit_value":"Degree-Celsius"
-                    }
-                ]
-            }
-        ]
+            "form_name": "VS_01_EOS",
+            "itemgroups": [itemgroup]
         }
     }
-    itemgroup_sequence += 1  # Increment sequence for the next event
-    print(json.dumps(json_body, indent=4))
     json_payloads.append(json_body)
 
-
-# Define the API endpoint
-
+# API headers and endpoint
 headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "Authorization": f"Bearer {SESSION_ID}",
 }
+api_endpoint = f"{BASE_URL}/api/{API_VERSION}/app/cdm/forms/actions/setdata"
 
-api_endpoint =  f"{BASE_URL}/api/{API_VERSION}/app/cdm/forms/actions/setdata"
+def validate_form_data(payload):
+    form = payload.get("form", {})
+    required_fields = ["study_country", "site", "subject", "eventgroup_name", "event_name", "form_name"]
+    for field in required_fields:
+        if not form.get(field):
+            print(f"Validation error: {field} is missing in form for subject {form.get('subject')}")
+            return False
+    return True
+
+# Import forms with error handling and user feedback
 for payload in json_payloads:
-    response = requests.post(api_endpoint, headers=headers, data=json.dumps(payload))
-    response_json = response.json()  # This directly parses the response if it's JSON
-    print(json.dumps(response_json, indent=4))
-
+    try:
+        import_form(payload, api_endpoint, headers, validate_form_data)
+    except (FormDataError, APIError, InvalidSessionIDError) as e:
+        print(f"Error: {e}")
+        log_error(e)
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        log_error(e)

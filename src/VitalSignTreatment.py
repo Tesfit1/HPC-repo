@@ -2,29 +2,44 @@ import json
 from dotenv import load_dotenv
 import requests
 import os
+from dateConv import convert_date_format
 import pandas as pd
-from datetime import datetime
+import boto3
+from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error, check_file_exists
+from io import StringIO 
 
 # Load environment variables from .env file
 load_dotenv()
-#1.Create Subjects
-# variables
 
+# Variables
 API_VERSION = os.getenv("API_VERSION")
 BASE_URL = os.getenv("BASE_URL")
-SESSION_ID = os.getenv("SESSION_ID")
+# SESSION_ID = os.getenv("SESSION_ID")
+# SESSION_FILE = "/session/session_id.txt"
+SESSION_FILE = "session_id.txt"
+with open(SESSION_FILE) as f:
+    SESSION_ID = f.read().strip()
 study_name = os.getenv("Study_name")
 study_country = os.getenv("Study_country")
 site = os.getenv("site")
+
+aws_access = os.getenv("AWS_ACCESS_KEY_ID")
+aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
+file_name = os.getenv("VitalSignTreatment")
+bucket_name = os.getenv("bucket_name")
+
 # Read a comma-delimited .txt file
-current_dir = os.path.dirname(os.path.abspath(__file__))
+s3 = boto3.client('s3', aws_access_key_id= aws_access, aws_secret_access_key=aws_secret)
 
-# Move one directory level up
-parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+try:
+    response = s3.get_object(Bucket=bucket_name, Key=file_name)
+    file_content = response['Body'].read().decode('utf-8')
+    df = pd.read_csv(StringIO(file_content), delimiter='|', dtype=str)
+except FileNotFoundError as e:
+    log_error(e)
+    raise
 
-# Path to the CSV file
-csv_file_path = os.path.join(parent_dir, '1234-5678_TEST_HPC_VSTREAT_FULL_2024JUL101150.txt')
-df = pd.read_csv(csv_file_path , delimiter='|',dtype=str)
+
 
 # Rename columns while keeping original data intact
 df = df.rename(columns={
@@ -42,25 +57,11 @@ df = df.rename(columns={
 })
 
 def preprocess_dataframe(df):
-    # Convert date format
-    def convert_date_format(date_str):
-        try:
-            return datetime.strptime(date_str, "%d %b %Y").strftime("%Y-%m-%d")
-        except (ValueError, TypeError):
-            return None  # Handle missing or invalid dates
-
     df["VSDAT_1"] = df["VSDAT_1"].apply(convert_date_format)
     return df
+
 df = preprocess_dataframe(df)
-# set the event date
-#event_date = df['DSSTDAT_IC']
-#event_date = str(df['DSSTDAT_IC'].iloc[0])
-
-
 df = df.fillna("")
-#df['CHILDPOT'] = df['CHILDPOT'].replace("", None).fillna("No")
-#df["AGE"] = pd.to_numeric(df["AGE"], errors="coerce")
-
 # prepare the data to be sent
 json_payloads = []
 current_subject = None  # Track current subject
@@ -97,21 +98,25 @@ for _, row in df.iterrows():
             "subject": subject,
             "eventgroup_name": (
                 'eg_SCREEN' if row['Folder'] == 'V01' else
-                'eg_TREAT_CO'
+                'eg_TREAT_SD'
             ),
             "eventgroup_sequence": 1,
             "event_name": (
                 'ev_V01' if row['Folder'] == 'V01' else
-                'ev_v02' if row['Folder'] == 'V02' else
+                'ev_V02' if row['Folder'] == 'V02' else
                 'ev_V03' if row['Folder'] == 'V03' else
                 'ev_V04'
             ),
-            "form_name": "VS_01_v001_1",
+            "form_name": "VS_01_TREAT",
             "itemgroups": [
             {
                 "itemgroup_name": "ig_VS_01_A_1",
                 "itemgroup_sequence": itemgroup_sequence,
                 "items": [
+                    {
+                        "item_name": "VSTPT_1",
+                        "value": row['VSTPT_1']
+                    },
                     {
                         "item_name": "VSDAT_1",
                         "value": row['VSDAT_1']
@@ -125,16 +130,12 @@ for _, row in df.iterrows():
                     #     "value": row['HEIGHT'],
                     #     "unit_value":"Centimeter"
                     # },
-                    {
-                        "item_name":"WEIGHT_1",
-                        "value": row['WEIGHT_1'],
-                        "unit_value":"Kilogram"
-                    },
-                    {
-                        "item_name" : "PULSE_1",
-                        "value": row['PULSE_1'],
-                        "unit_value":"Beats per Minute"
-                    },
+                    # {
+                    #     "item_name":"WEIGHT_1",
+                    #     "value": row['WEIGHT_1'],
+                    #     "unit_value":"Kilogram"
+                    # },
+                    
                     {
                         "item_name" : "SYSBP_1",
                         "value": row['SYSBP_1'],
@@ -146,15 +147,20 @@ for _, row in df.iterrows():
                         "unit_value":"Millimeter of Mercury"
                     },
                     {
-                        "item_name" : "RESP_1",
-                        "value": row['RESP_1'],
-                        "unit_value":"Breaths per Minute"
+                        "item_name" : "PULSE_1",
+                        "value": row['PULSE_1'],
+                        "unit_value":"Beats per Minute"
                     },
-                    {
-                        "item_name" : "TEMP_1",
-                        "value": row['TEMP_1'],
-                        "unit_value":"Degree-Celsius"
-                    }
+                    # {
+                    #     "item_name" : "RESP_1",
+                    #     "value": row['RESP_1'],
+                    #     "unit_value":"Breaths per Minute"
+                    # }
+                    # {
+                    #     "item_name" : "TEMP_1",
+                    #     "value": row['TEMP_1'],
+                    #     "unit_value":"Degree-Celsius"
+                    # }
                 ]
             }
             ]

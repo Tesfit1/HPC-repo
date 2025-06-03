@@ -3,48 +3,59 @@ from dotenv import load_dotenv
 import requests
 import os
 import pandas as pd
-from datetime import datetime
+import boto3
+from dateConv import convert_date_format
+from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error
+from io import StringIO
+from api_utils import import_form
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
-# Variables
 API_VERSION = os.getenv("API_VERSION")
 BASE_URL = os.getenv("BASE_URL")
-SESSION_ID = os.getenv("SESSION_ID")
+SESSION_FILE = "session_id.txt"
+with open(SESSION_FILE) as f:
+    SESSION_ID = f.read().strip()
 study_name = os.getenv("Study_name")
 study_country = os.getenv("Study_country")
 site = os.getenv("site")
+aws_access = os.getenv("AWS_ACCESS_KEY_ID")
+aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
+file_name = os.getenv("drugAdmin")
+bucket_name = os.getenv("bucket_name")
 
-# Read a comma-delimited .txt file
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
-csv_file_path = os.path.join(parent_dir, '1234-5678_TEST_HPC_EC_OTH_02_FULL_2024JUL101315.txt')
-df = pd.read_csv(csv_file_path, delimiter='|', dtype=str)
+# Read drug administration data from S3
+s3 = boto3.client('s3', aws_access_key_id=aws_access, aws_secret_access_key=aws_secret)
+try:
+    response = s3.get_object(Bucket=bucket_name, Key=file_name)
+    file_content = response['Body'].read().decode('utf-8')
+    df = pd.read_csv(StringIO(file_content), delimiter='|', dtype=str)
+except FileNotFoundError as e:
+    log_error(e)
+    raise
 
-# Rename columns while keeping original data intact
+# Ensure required columns exist before renaming
+required_columns = ['Subject Number', 'Folder', 'Time Point', 'Administration Date', 'Administration Time', 'Comment']
+missing_columns = [col for col in required_columns if col not in df.columns]
+if missing_columns:
+    raise KeyError(f"Missing columns in input data: {missing_columns}")
+
+# Rename columns
 df = df.rename(columns={
     'Subject Number': 'subject',
+    'Folder': 'Folder',
     'Time Point': 'ECTPT',
     'Administration Date': 'ECSTDAT',
     'Administration Time': 'ECSTTIM',
     'Comment': 'COVAL'
 })
 
-# Adding a new column for drug admin condition
+# Add and update ECOCCUR
 df['ECOCCUR'] = "N"
-
-# Updating the column to True when drug admin date is not empty
 df.loc[df['ECSTDAT'].notnull(), 'ECOCCUR'] = "Y"
 
 def preprocess_dataframe(df):
-    # Convert date format
-    def convert_date_format(date_str):
-        try:
-            return datetime.strptime(date_str, "%d %b %Y").strftime("%Y-%m-%d")
-        except (ValueError, TypeError):
-            return None  # Handle missing or invalid dates
-
     df["ECSTDAT"] = df["ECSTDAT"].apply(convert_date_format)
     return df
 
@@ -53,27 +64,19 @@ df = df.fillna("")
 
 # Prepare JSON payloads
 json_payloads = []
-current_subject = None  # Track current subject
-current_event = None  # Track current event
-previous_folder = None  # Track previous folder
-
-itemgroup_sequence = 1  # Start item sequence counter
-eventgroup_sequence = 1
+subject_event_counter = {}
 
 for _, row in df.iterrows():
     subject = row['subject']
     event = row['Folder']
 
-    # Reset itemgroup_sequence if Folder changes
-    if event != previous_folder:
-        itemgroup_sequence = 1  # Reset item sequence when event changes
-        previous_folder = event  # Update previous_folder to the current event
-
-    # Reset itemgroup_sequence if subject changes
-    if subject != current_subject:
-        current_subject = subject
-        itemgroup_sequence = 1
-        previous_folder = event  # Reset previous_folder for the new subject
+    # Track itemgroup_sequence per subject/event
+    key = (subject, event)
+    if key not in subject_event_counter:
+        subject_event_counter[key] = 1
+    else:
+        subject_event_counter[key] += 1
+    itemgroup_sequence = subject_event_counter[key]
 
     json_body = {
         "study_name": study_name,
@@ -86,14 +89,13 @@ for _, row in df.iterrows():
             "site": site,
             "subject": subject,
             "eventgroup_name": (
-                'eg_SCREEN' if row['Folder'] == 'V01' else
-                'eg_TREAT_CO'
+                'eg_SCREEN' if event == 'V01' else 'eg_TREAT_SD'
             ),
             "eventgroup_sequence": 1,
             "event_name": (
-                'ev_V01' if row['Folder'] == 'V01' else
-                'ev_v02' if row['Folder'] == 'V02' else
-                'ev_V03' if row['Folder'] == 'V03' else
+                'ev_V01' if event == 'V01' else
+                'ev_V02' if event == 'V02' else
+                'ev_V03' if event == 'V03' else
                 'ev_V04'
             ),
             "form_name": "EC_01_v002",
@@ -102,45 +104,42 @@ for _, row in df.iterrows():
                     "itemgroup_name": "ig_EC_01_A",
                     "itemgroup_sequence": itemgroup_sequence,
                     "items": [
-                        {
-                            "item_name": "ECTPT",
-                            "value": row['ECTPT']
-                        },
-                        {
-                            "item_name": "ECOCCUR",
-                            "value": row['ECOCCUR']
-                        },
-                        {
-                            "item_name": "ECSTDAT",
-                            "value": row['ECSTDAT']
-                        },
-                        {
-                            "item_name": "ECSTTIM",
-                            "value": row['ECSTTIM']
-                        },
-                        {
-                            "item_name": "COVAL",
-                            "value": row['COVAL']
-                        }
+                        {"item_name": "ECTPT", "value": row['ECTPT']},
+                        {"item_name": "ECOCCUR", "value": row['ECOCCUR']},
+                        {"item_name": "ECSTDAT", "value": row['ECSTDAT']},
+                        {"item_name": "ECSTTIM", "value": row['ECSTTIM']},
+                        {"item_name": "COVAL", "value": row['COVAL']}
                     ]
                 }
             ]
         }
     }
     json_payloads.append(json_body)
-    itemgroup_sequence += 1  # Increment item sequence for the next event
-    print(json.dumps(json_body, indent=4))
-# Define the API endpoint
-# headers = {
-#     "Content-Type": "application/json",
-#     "Accept": "application/json",
-#     "Authorization": f"Bearer {SESSION_ID}",
-# }
-#
-# api_endpoint = f"{BASE_URL}/api/{API_VERSION}/app/cdm/forms/actions/setdata"
-#
-# # Send JSON payloads to the API
-# for payload in json_payloads:
-#     response = requests.post(api_endpoint, headers=headers, data=json.dumps(payload))
-#     response_json = response.json()  # Parse response if it's JSON
-#     print(json.dumps(response_json, indent=4))
+
+# API headers and endpoint
+headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": f"Bearer {SESSION_ID}",
+}
+api_endpoint = f"{BASE_URL}/api/{API_VERSION}/app/cdm/forms/actions/setdata"
+
+def validate_form_data(payload):
+    form = payload.get("form", {})
+    required_fields = ["study_country", "site", "subject", "eventgroup_name", "event_name", "form_name"]
+    for field in required_fields:
+        if not form.get(field):
+            print(f"Validation error: {field} is missing in form for subject {form.get('subject')}")
+            return False
+    return True
+
+# Import forms with error handling and user feedback
+for payload in json_payloads:
+    try:
+        import_form(payload, api_endpoint, headers, validate_form_data)
+    except (FormDataError, APIError, InvalidSessionIDError) as e:
+        print(f"Error: {e}")
+        log_error(e)
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        log_error(e)

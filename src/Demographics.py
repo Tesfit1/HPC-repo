@@ -5,14 +5,13 @@ import os
 from dateConv import convert_date_format
 import pandas as pd
 import boto3
-from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error, check_file_exists
+from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error
 from io import StringIO
 from api_utils import import_form
 
 # Load environment variables
 load_dotenv()
 
-# Variables
 API_VERSION = os.getenv("API_VERSION")
 BASE_URL = os.getenv("BASE_URL")
 # SESSION_FILE = "session_id.txt"
@@ -24,10 +23,10 @@ study_country = os.getenv("Study_country")
 site = os.getenv("site")
 aws_access = os.getenv("AWS_ACCESS_KEY_ID")
 aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
-file_name = os.getenv("Eligibility")
+file_name = os.getenv("Event_DM")
 bucket_name = os.getenv("bucket_name")
 
-# Read eligibility data from S3
+# Read demographics data from S3
 s3 = boto3.client('s3', aws_access_key_id=aws_access, aws_secret_access_key=aws_secret)
 try:
     response = s3.get_object(Bucket=bucket_name, Key=file_name)
@@ -37,44 +36,57 @@ except FileNotFoundError as e:
     log_error(e)
     raise
 
-# Rename and map columns
+# Rename columns and map values
 df = df.rename(columns={
-    'Subject Number': 'subject', 
-    'Randomized': 'DSCOMP_ELIG',
-    'Reason Non-Randomized': 'DSNCOMP_ELIG',
-    'Randomization Date': 'DSSTDAT_ELIG',
-    'Randomization Number': 'RANDNO'
+    'Subject Number': 'subject',  
+    'Birth Year': 'BRTHDAT',
+    'Age': 'AGE',
+    'Sex': 'SEX',
+    'Child Bearing Potential': 'CHILDPOT_1',
+    'Gender': 'GENIDENT',
+    'Ethnicity': 'ETHNIC',
+    'American Indian or Alaska Native': 'RACE_1',
+    'Asian': 'RACE_2',
+    'Black or African American': 'RACE_3',
+    'Native Hawaiian or Other Pacific Islander': 'RACE_4',
+    'White': 'RACE_5'
 })
-df["DSCOMP_ELIG"] = df["DSCOMP_ELIG"].map({"Yes": "Y", "No": "N"})
-df["DSNCOMP_ELIG"] = df["DSNCOMP_ELIG"].map({
-    "Adverse Event": "ADVERSE EVENT",
-    "Screen Failure": "SCREEN FAILURE",
-    "Screened in Error": "SCREENED IN ERROR",
-    "Lost to Follow-Up": "LOST TO FOLLOW-UP",
-    "Withdrawal by Subject": "WITHDRAWAL BY SUBJECT",
-    "Other": "OTHER"
-})
+df["ETHNIC"] = df["ETHNIC"].map({"Not Hispanic or Latino": "NOT HISPANIC OR LATINO", "Hispanic or Latino": "HISPANIC OR LATINO"})
+df["SEX"] = df["SEX"].map({"Male": "M", "Female": "F"})
+df["RACE_1"] = df["RACE_1"].map({"American Indian or Alaska Native": True})
+df["RACE_2"] = df["RACE_2"].map({"Asian": True})
+df["RACE_3"] = df["RACE_3"].map({"Black or African American": True})
+df["RACE_4"] = df["RACE_4"].map({"Native Hawaiian or Other Pacific Islander": True})
+df["RACE_5"] = df["RACE_5"].map({"White": True})
+df = df.fillna("")
 
 def preprocess_dataframe(df):
-    df["DSSTDAT_ELIG"] = df["DSSTDAT_ELIG"].apply(convert_date_format)
+    # Add any date conversion or additional preprocessing here if needed
     return df
 
 df = preprocess_dataframe(df)
-df = df.fillna("")
 
-# Build payloads: one form per eligibility record
+# Prepare the data to be sent
 json_payloads = []
 
-for idx, row in df.iterrows():
+for _, row in df.iterrows():
     subject = row['subject']
     itemgroup = {
-        "itemgroup_name": "ig_ELIG_02_A",
+        "itemgroup_name": "ig_DM_02_A",
         "itemgroup_sequence": 1,
         "items": [
-            {"item_name": "DSCOMP_ELIG", "value": row['DSCOMP_ELIG']},
-            {"item_name": "DSNCOMP_ELIG", "value": row['DSNCOMP_ELIG']},
-            {"item_name": "DSSTDAT_ELIG", "value": row['DSSTDAT_ELIG']},
-            {"item_name": "RANDNO", "value": row['RANDNO']}
+            {"item_name": "BRTHDAT", "value": row['BRTHDAT']},
+            {"item_name": "AGE", "value": row['AGE'], "unit_value": "Year"},
+            {"item_name": "SEX", "value": row['SEX']},
+            # Uncomment if you want to include these fields:
+            # {"item_name": "CHILDPOT_1", "value": row['CHILDPOT_1']},
+            # {"item_name": "GENIDENT", "value": row['GENIDENT']},
+            {"item_name": "ETHNIC", "value": row['ETHNIC']},
+            {"item_name": "RACE_1", "value": row['RACE_1']},
+            {"item_name": "RACE_2", "value": row['RACE_2']},
+            {"item_name": "RACE_3", "value": row['RACE_3']},
+            {"item_name": "RACE_4", "value": row['RACE_4']},
+            {"item_name": "RACE_5", "value": row['RACE_5']}
         ]
     }
 
@@ -88,9 +100,9 @@ for idx, row in df.iterrows():
             "study_country": study_country,
             "site": site,
             "subject": subject,
-            "eventgroup_name": "eg_COMMON",
-            "event_name": "ev_COMMON",
-            "form_name": "ELIG_02_v001",
+            "eventgroup_name": "eg_SCREEN",
+            "event_name": "ev_V01",
+            "form_name": "DM_02_v001",
             "itemgroups": [itemgroup]
         }
     }
