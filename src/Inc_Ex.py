@@ -22,7 +22,7 @@ study_country = os.getenv("Study_country")
 site = os.getenv("site")
 aws_access = os.getenv("AWS_ACCESS_KEY_ID")
 aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
-file_name = os.getenv("incExc")
+file_name = os.getenv("IE")
 bucket_name = os.getenv("bucket_name")
 
 # Read inclusion/exclusion data from S3
@@ -52,15 +52,38 @@ def preprocess_dataframe(df):
 
 df = preprocess_dataframe(df)
 
-# Prepare the data to be sent
+# Group by subject (and CTPNUMG if needed)
+grouped = df.groupby(['subject', 'CTPNUMG'])
+
 json_payloads = []
 
-for _, row in df.iterrows():
-    subject = row['subject']
-    CTPNUMG = row['CTPNUMG']
-    IEYN = row['IEYN']
-    IECAT = row['IECAT']
-    IENUM = row['IENUM']
+for (subject, CTPNUMG), group in grouped:
+    # Use the first row for ig_IE_01_A (non-repeating)
+    first_row = group.iloc[0]
+    IEYN = first_row['IEYN']
+
+    itemgroups = [
+        {
+            "itemgroup_name": "ig_IE_01_A",
+            "itemgroup_sequence": 1,
+            "items": [
+                {"item_name": "CTPNUMG", "value": CTPNUMG},
+                {"item_name": "IEYN", "value": IEYN}
+            ]
+        }
+    ]
+
+    # Add repeating ig_IE_01_B itemgroups for each row with IECAT and IENUM
+    for idx, row in group.iterrows():
+        if pd.notna(row['IECAT']) and pd.notna(row['IENUM']):
+            itemgroups.append({
+                "itemgroup_name": "ig_IE_01_B",
+                "itemgroup_sequence": int(idx - group.index[0] + 1),  # sequence starts at 1
+                "items": [
+                    {"item_name": "IECAT", "value": row['IECAT']},
+                    {"item_name": "IENUM", "value": row['IENUM']}
+                ]
+            })
 
     json_body = {
         "study_name": study_name,
@@ -75,24 +98,7 @@ for _, row in df.iterrows():
             "eventgroup_name": "eg_COMMON",
             "event_name": "ev_COMMON",
             "form_name": "IE_01_v001",
-            "itemgroups": [
-                {
-                    "itemgroup_name": "ig_IE_01_A",
-                    "itemgroup_sequence": 1,
-                    "items": [
-                        {"item_name": "CTPNUMG", "value": CTPNUMG},
-                        {"item_name": "IEYN", "value": IEYN}
-                    ]
-                },
-                {
-                    "itemgroup_name": "ig_IE_01_B",
-                    "itemgroup_sequence": 1,
-                    "items": [
-                        {"item_name": "IECAT", "value": IECAT},
-                        {"item_name": "IENUM", "value": IENUM}
-                    ]
-                }
-            ]
+            "itemgroups": itemgroups
         }
     }
     json_payloads.append(json_body)

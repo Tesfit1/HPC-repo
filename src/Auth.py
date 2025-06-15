@@ -83,7 +83,8 @@ session_key = 'session_id' if 'session_id' in response_json else 'sessionId'
 if session_key in response_json:
     session_id = response_json[session_key]
     print("Session ID to be written:", session_id)
-    session_file_path = '/opt/airflow/scripts/session_id.txt'
+    # session_file_path = '/opt/airflow/scripts/sessi session_file_path = '../session_id.txt'on_id.txt'
+    session_file_path = "./session_id.txt"
     try:
         with open(session_file_path, "w") as f:
             f.write(session_id)

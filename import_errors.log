@@ -1,2 +1,872 @@
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
+ERROR:root:Form import failed for subject 10213
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
+ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
+ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
+ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Exclusion Criteria] not found
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Inclusion Criteria] not found
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Exclusion Criteria] not found
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Exclusion Criteria] not found
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Inclusion Criteria] not found
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Unexpected error importing form 10111: Object of type int64 is not JSON serializable
+ERROR:root:Object of type int64 is not JSON serializable
+ERROR:root:Unexpected error importing form 10111: Object of type int64 is not JSON serializable
+ERROR:root:Object of type int64 is not JSON serializable
+ERROR:root:Unexpected error importing form 10112: Object of type int64 is not JSON serializable
+ERROR:root:Object of type int64 is not JSON serializable
+ERROR:root:Unexpected error importing form 10112: Object of type int64 is not JSON serializable
+ERROR:root:Object of type int64 is not JSON serializable
+ERROR:root:Unexpected error importing form 10113: Object of type int64 is not JSON serializable
+ERROR:root:Object of type int64 is not JSON serializable
+ERROR:root:Unexpected error importing form 10113: Object of type int64 is not JSON serializable
+ERROR:root:Object of type int64 is not JSON serializable
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
+ERROR:root:Form import failed for subject 10213
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10312: Form import failed for subject 10312
+ERROR:root:Form import failed for subject 10312
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
+ERROR:root:Form import failed for subject 10213
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10312: Form import failed for subject 10312
+ERROR:root:Form import failed for subject 10312
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
+ERROR:root:Form import failed for subject 10211
+ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
+ERROR:root:Form import failed for subject 10212
+ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
+ERROR:root:Form import failed for subject 10213
+ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
+ERROR:root:Form import failed for subject 10213
+ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
+ERROR:root:Form import failed for subject 10311
+ERROR:root:Unexpected error importing form 10312: Form import failed for subject 10312
+ERROR:root:Form import failed for subject 10312
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
+ERROR:root:Form import failed for subject 10313
+ERROR:root:Subject: 10313, Event: ev_V01, Error: [Subject] with name [10313] not found
+ERROR:root:Subject: 10313, Event: ev_V02, Error: [Subject] with name [10313] not found
+ERROR:root:Subject: 10313, Event: ev_V03, Error: [Subject] with name [10313] not found
+ERROR:root:Subject: 10313, Event: ev_V04, Error: [Subject] with name [10313] not found
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
+ERROR:root:Form import failed for subject 10111
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
+ERROR:root:Form import failed for subject 10112
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
+ERROR:root:Form import failed for subject 10113
 ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
 ERROR:root:Form import failed for subject 10313

@@ -15,8 +15,8 @@ load_dotenv()
 API_VERSION = os.getenv("API_VERSION")
 BASE_URL = os.getenv("BASE_URL")
 # SESSION_ID = os.getenv("SESSION_ID")
-# SESSION_FILE = "session_id.txt"
-SESSION_FILE = '/opt/airflow/scripts/session_id.txt'
+SESSION_FILE = "session_id.txt"
+# SESSION_FILE = '/opt/airflow/scripts/session_id.txt'
 with open(SESSION_FILE) as f:
     SESSION_ID = f.read().strip()
 print(f"Session ID: {SESSION_ID}")  # Debugging line to check SESSION_ID
