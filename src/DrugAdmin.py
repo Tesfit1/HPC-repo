@@ -1,120 +1,52 @@
 import json
-from dotenv import load_dotenv
-import requests
-import os
-import pandas as pd
-import boto3
-from dateConv import convert_date_format
-from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error
-from io import StringIO
-from api_utils import import_form
+from utils.error_log_utils import (
+    FormDataError, APIError, CustomFileNotFoundError, InvalidSessionIDError,
+    log_error, check_file_exists
+)
+from utils.api_utils import import_forms_bulk
+from utils.s3_utils import read_s3_csv
+from utils.config_utils import (
+    API_VERSION, BASE_URL, STUDY_NAME, STUDY_COUNTRY, SITE,
+    AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, BUCKET_NAME,
+    FILE_NAMES, SESSION_FILE
+)
+from utils.form_config_utils import FORM_CONFIGS
+from utils.data_utils import validate_columns, rename_columns, preprocess_dataframe, build_json_payloads
+from utils.dateConv_utils import convert_date_format
 
-# Load environment variables
-load_dotenv()
-
-API_VERSION = os.getenv("API_VERSION")
-BASE_URL = os.getenv("BASE_URL")
-SESSION_FILE = "session_id.txt"
+check_file_exists(SESSION_FILE)
 with open(SESSION_FILE) as f:
     SESSION_ID = f.read().strip()
-study_name = os.getenv("Study_name")
-study_country = os.getenv("Study_country")
-site = os.getenv("site")
-aws_access = os.getenv("AWS_ACCESS_KEY_ID")
-aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
-file_name = os.getenv("drugAdmin")
-bucket_name = os.getenv("bucket_name")
 
-# Read drug administration data from S3
-s3 = boto3.client('s3', aws_access_key_id=aws_access, aws_secret_access_key=aws_secret)
-try:
-    response = s3.get_object(Bucket=bucket_name, Key=file_name)
-    file_content = response['Body'].read().decode('utf-8')
-    df = pd.read_csv(StringIO(file_content), delimiter='|', dtype=str)
-except FileNotFoundError as e:
-    log_error(e)
-    raise
+form_config = FORM_CONFIGS["DrugAdmin"]
 
-# Ensure required columns exist before renaming
-required_columns = ['Subject Number', 'Folder', 'Time Point', 'Administration Date', 'Administration Time', 'Comment']
-missing_columns = [col for col in required_columns if col not in df.columns]
-if missing_columns:
-    raise KeyError(f"Missing columns in input data: {missing_columns}")
+# Read data
+df = read_s3_csv(
+    bucket=BUCKET_NAME,
+    key=FILE_NAMES["drug_admin"],
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    delimiter='|'
+)
 
-# Rename columns
-df = df.rename(columns={
-    'Subject Number': 'subject',
-    'Folder': 'Folder',
-    'Time Point': 'ECTPT',
-    'Administration Date': 'ECSTDAT',
-    'Administration Time': 'ECSTTIM',
-    'Comment': 'COVAL'
-})
+# Validate and rename columns
+validate_columns(df, form_config["required_columns"])
+df = rename_columns(df, form_config["rename_map"])
 
 # Add and update ECOCCUR
 df['ECOCCUR'] = "N"
 df.loc[df['ECSTDAT'].notnull(), 'ECOCCUR'] = "Y"
 
-def preprocess_dataframe(df):
+# Preprocess (example: date conversion)
+def my_preprocess(df):
     df["ECSTDAT"] = df["ECSTDAT"].apply(convert_date_format)
     return df
 
-df = preprocess_dataframe(df)
+df = preprocess_dataframe(df, preprocess_funcs=[my_preprocess])
 df = df.fillna("")
 
-# Prepare JSON payloads
-json_payloads = []
-subject_event_counter = {}
-
-for _, row in df.iterrows():
-    subject = row['subject']
-    event = row['Folder']
-
-    # Track itemgroup_sequence per subject/event
-    key = (subject, event)
-    if key not in subject_event_counter:
-        subject_event_counter[key] = 1
-    else:
-        subject_event_counter[key] += 1
-    itemgroup_sequence = subject_event_counter[key]
-
-    json_body = {
-        "study_name": study_name,
-        "reopen": True,
-        "submit": True,
-        "change_reason": "Updated by the integration",
-        "externally_owned": True,
-        "form": {
-            "study_country": study_country,
-            "site": site,
-            "subject": subject,
-            "eventgroup_name": (
-                'eg_SCREEN' if event == 'V01' else 'eg_TREAT_SD'
-            ),
-            "eventgroup_sequence": 1,
-            "event_name": (
-                'ev_V01' if event == 'V01' else
-                'ev_V02' if event == 'V02' else
-                'ev_V03' if event == 'V03' else
-                'ev_V04'
-            ),
-            "form_name": "EC_01_v002",
-            "itemgroups": [
-                {
-                    "itemgroup_name": "ig_EC_01_A",
-                    "itemgroup_sequence": itemgroup_sequence,
-                    "items": [
-                        {"item_name": "ECTPT", "value": row['ECTPT']},
-                        {"item_name": "ECOCCUR", "value": row['ECOCCUR']},
-                        {"item_name": "ECSTDAT", "value": row['ECSTDAT']},
-                        {"item_name": "ECSTTIM", "value": row['ECSTTIM']},
-                        {"item_name": "COVAL", "value": row['COVAL']}
-                    ]
-                }
-            ]
-        }
-    }
-    json_payloads.append(json_body)
+# Build payloads
+json_payloads = build_json_payloads(df, form_config, STUDY_NAME, STUDY_COUNTRY, SITE)
 
 # API headers and endpoint
 headers = {
@@ -134,12 +66,8 @@ def validate_form_data(payload):
     return True
 
 # Import forms with error handling and user feedback
-for payload in json_payloads:
-    try:
-        import_form(payload, api_endpoint, headers, validate_form_data)
-    except (FormDataError, APIError, InvalidSessionIDError) as e:
-        print(f"Error: {e}")
-        log_error(e)
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-        log_error(e)
+try:
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+except Exception as e:
+    print(f"Bulk import error: {e}")
+    log_error(e)

@@ -1,872 +1,824 @@
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
-ERROR:root:Form import failed for subject 10213
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT_DECTPS, Error: [Item Definition] with name [DSSTDAT_DECTPS] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSUNBLND, Error: Unique Item cannot be found with specified keys
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSSTDAT, Error: [Item Definition] with name [DSSTDAT] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNCOMP, Error: [Item Definition] with name [DSNCOMP] not found
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Physician Decision] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Subject: 10113, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Prematurely Discontinued] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Subject Decision] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Lack of Efficacy] not found
-ERROR:root:Subject: 10211, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Randomized by Mistake] not found
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Completed] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Study Terminated by Sponsor] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Clinical Disease Progression] not found
-ERROR:root:Subject: 10311, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Other, User Specified Value] not found
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: subject, Error: [Item Definition] with name [subject] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSCOMP_TPS, Error: [Codelist Item Definition] with code [Never Started] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSDECIS, Error: [Codelist Item Definition] with code [Lost to Follow-Up] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSREAS, Error: [Codelist Item Definition] with code [Objective Disease Progression] not found
-ERROR:root:Subject: 10212, ItemGroup: ig_TPS_03_A, Item: DSNTRTR, Error: [Codelist Item Definition] with code [Adverse Event] not found
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Exclusion Criteria] not found
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Inclusion Criteria] not found
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Exclusion Criteria] not found
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Exclusion Criteria] not found
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Subject: 10112, ItemGroup: ig_IE_01_B, Item: IECAT, Error: [Codelist Item Definition] with code [Inclusion Criteria] not found
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Unexpected error importing form 10111: Object of type int64 is not JSON serializable
-ERROR:root:Object of type int64 is not JSON serializable
-ERROR:root:Unexpected error importing form 10111: Object of type int64 is not JSON serializable
-ERROR:root:Object of type int64 is not JSON serializable
-ERROR:root:Unexpected error importing form 10112: Object of type int64 is not JSON serializable
-ERROR:root:Object of type int64 is not JSON serializable
-ERROR:root:Unexpected error importing form 10112: Object of type int64 is not JSON serializable
-ERROR:root:Object of type int64 is not JSON serializable
-ERROR:root:Unexpected error importing form 10113: Object of type int64 is not JSON serializable
-ERROR:root:Object of type int64 is not JSON serializable
-ERROR:root:Unexpected error importing form 10113: Object of type int64 is not JSON serializable
-ERROR:root:Object of type int64 is not JSON serializable
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
-ERROR:root:Form import failed for subject 10213
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10312: Form import failed for subject 10312
-ERROR:root:Form import failed for subject 10312
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
-ERROR:root:Form import failed for subject 10213
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10312: Form import failed for subject 10312
-ERROR:root:Form import failed for subject 10312
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10211: Form import failed for subject 10211
-ERROR:root:Form import failed for subject 10211
-ERROR:root:Unexpected error importing form 10212: Form import failed for subject 10212
-ERROR:root:Form import failed for subject 10212
-ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
-ERROR:root:Form import failed for subject 10213
-ERROR:root:Unexpected error importing form 10213: Form import failed for subject 10213
-ERROR:root:Form import failed for subject 10213
-ERROR:root:Unexpected error importing form 10311: Form import failed for subject 10311
-ERROR:root:Form import failed for subject 10311
-ERROR:root:Unexpected error importing form 10312: Form import failed for subject 10312
-ERROR:root:Form import failed for subject 10312
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
-ERROR:root:Subject: 10313, Event: ev_V01, Error: [Subject] with name [10313] not found
-ERROR:root:Subject: 10313, Event: ev_V02, Error: [Subject] with name [10313] not found
-ERROR:root:Subject: 10313, Event: ev_V03, Error: [Subject] with name [10313] not found
-ERROR:root:Subject: 10313, Event: ev_V04, Error: [Subject] with name [10313] not found
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10111: Form import failed for subject 10111
-ERROR:root:Form import failed for subject 10111
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Unexpected error importing form 10112: Form import failed for subject 10112
-ERROR:root:Form import failed for subject 10112
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
-ERROR:root:Subject: 10113, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
-ERROR:root:Unexpected error importing form 10113: Form import failed for subject 10113
-ERROR:root:Form import failed for subject 10113
-ERROR:root:Unexpected error importing form 10313: Form import failed for subject 10313
-ERROR:root:Form import failed for subject 10313
+2025-06-26 09:45:34,998 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 09:54:34,984 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 10:19:58,063 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-26 10:19:58,065 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-26 10:19:58,065 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 10:19:58,068 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 102, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 10:20:05,986 ERROR Subject: 10113, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-26 10:20:05,986 ERROR Unexpected error importing form 10113: Form import failed for subject 10113
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10113
+2025-06-26 10:20:05,987 ERROR Form import failed for subject 10113
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 102, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10113
+2025-06-26 10:20:08,600 ERROR Subject: 10211, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-26 10:20:08,601 ERROR Unexpected error importing form 10211: Form import failed for subject 10211
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10211
+2025-06-26 10:20:08,603 ERROR Form import failed for subject 10211
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 102, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10211
+2025-06-26 10:20:11,129 ERROR Subject: 10212, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-26 10:20:11,129 ERROR Unexpected error importing form 10212: Form import failed for subject 10212
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10212
+2025-06-26 10:20:11,130 ERROR Form import failed for subject 10212
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 102, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10212
+2025-06-26 10:20:17,364 ERROR Subject: 10312, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-26 10:20:17,364 ERROR Unexpected error importing form 10312: Form import failed for subject 10312
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10312
+2025-06-26 10:20:17,365 ERROR Form import failed for subject 10312
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 102, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10312
+2025-06-26 10:20:17,743 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 10:27:59,360 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: The item at this location is an Item to Form Link. The value node is not used for such items.
+NoneType: None
+2025-06-26 10:27:59,361 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 10:27:59,362 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 60, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 10:31:10,630 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 10:31:41,914 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 10:34:45,042 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSCAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:34:45,043 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSREFID_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:34:45,044 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:34:45,045 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSTDAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:34:45,045 ERROR Unexpected error importing form 10112: Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 10:34:45,047 ERROR Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\InformedConsent.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 10:42:49,311 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSCAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:42:49,312 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSREFID_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:42:49,313 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:42:49,314 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSTDAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:42:49,314 ERROR Unexpected error importing form 10112: Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 10:42:49,315 ERROR Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 10:45:22,892 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSCAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:45:22,893 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSREFID_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:45:22,894 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:45:22,896 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSTDAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 10:45:22,896 ERROR Unexpected error importing form 10112: Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 10:45:22,898 ERROR Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\InformedConsent.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 10:46:13,505 ERROR Subject: 10213, ItemGroup: ig_IC_01_A, Item: DSSTDAT_IC, Error: [value] is required
+NoneType: None
+2025-06-26 10:46:13,506 ERROR Unexpected error importing form 10213: Form import failed for subject 10213
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10213
+2025-06-26 10:46:13,507 ERROR Form import failed for subject 10213
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\InformedConsent.py", line 112, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10213
+2025-06-26 10:46:20,291 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 10:47:02,069 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 11:16:03,263 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 11:20:23,215 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 11:20:43,663 ERROR Subject: 10111, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:20:43,664 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 11:20:43,676 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 11:20:46,462 ERROR Subject: 10112, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:20:46,462 ERROR Unexpected error importing form 10112: Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 11:20:46,463 ERROR Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 11:20:49,577 ERROR Subject: 10113, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:20:49,578 ERROR Unexpected error importing form 10113: Form import failed for subject 10113
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10113
+2025-06-26 11:20:49,579 ERROR Form import failed for subject 10113
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10113
+2025-06-26 11:20:52,288 ERROR Subject: 10211, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:20:52,288 ERROR Unexpected error importing form 10211: Form import failed for subject 10211
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10211
+2025-06-26 11:20:52,289 ERROR Form import failed for subject 10211
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10211
+2025-06-26 11:20:55,566 ERROR Subject: 10212, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:20:55,566 ERROR Unexpected error importing form 10212: Form import failed for subject 10212
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10212
+2025-06-26 11:20:55,567 ERROR Form import failed for subject 10212
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10212
+2025-06-26 11:20:58,445 ERROR Subject: 10213, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:20:58,445 ERROR Unexpected error importing form 10213: Form import failed for subject 10213
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10213
+2025-06-26 11:20:58,446 ERROR Form import failed for subject 10213
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10213
+2025-06-26 11:21:00,909 ERROR Subject: 10311, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:21:00,909 ERROR Unexpected error importing form 10311: Form import failed for subject 10311
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10311
+2025-06-26 11:21:00,909 ERROR Form import failed for subject 10311
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10311
+2025-06-26 11:21:03,741 ERROR Subject: 10312, ItemGroup: ig_VS_01_A, Item: VSTIM, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-26 11:21:03,741 ERROR Unexpected error importing form 10312: Form import failed for subject 10312
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10312
+2025-06-26 11:21:03,742 ERROR Form import failed for subject 10312
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\VitalSignScreening.py", line 69, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10312
+2025-06-26 11:21:04,162 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 11:21:14,292 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 11:21:14,293 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\DrugAdmin.py", line 70, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 11:23:12,186 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 11:23:12,187 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\DrugAdmin.py", line 70, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 11:27:47,033 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 11:29:50,376 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 11:29:50,379 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\BloodSamplingForIS", line 72, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 13:53:43,754 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 13:53:43,764 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\BloodSamplingForIS", line 72, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 13:55:10,190 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 13:55:10,192 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\BloodSamplingForIS", line 72, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 13:57:04,961 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 13:57:04,964 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\BloodSamplingForPK.py", line 72, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-26 14:22:22,685 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:23,065 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:23,435 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:23,802 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:24,151 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:24,579 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:24,939 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:25,292 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:25,688 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:26,084 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:26,462 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:26,801 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:27,242 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:27,588 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:27,946 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:28,329 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:28,721 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:29,201 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:29,749 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:30,157 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:30,565 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:30,952 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:31,392 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:31,723 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:32,082 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:32,444 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:32,860 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:22:33,246 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-26 14:23:48,354 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSCAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 14:23:48,355 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSREFID_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 14:23:48,355 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 14:23:48,356 ERROR Subject: 10112, ItemGroup: ig_IC_01_A, Item: DSSTDAT_IC, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-26 14:23:48,356 ERROR Unexpected error importing form 10112: Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 14:23:48,357 ERROR Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\withdrawal_IC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-26 14:24:31,512 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 09:57:32,208 ERROR Subject: 10111, ItemGroup: ig_VS_01_A_1, Item: WEIGHT_1, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-27 09:57:32,231 ERROR Subject: 10111, ItemGroup: ig_VS_01_A_1, Item: RESP_1, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-27 09:57:32,233 ERROR Subject: 10111, ItemGroup: ig_VS_01_A_1, Item: TEMP_1, Error: Unique Item cannot be found with specified keys
+NoneType: None
+2025-06-27 09:57:32,234 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 10:45:51,907 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:45:52,330 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:45:52,763 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:45:53,141 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:45:53,744 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:45:54,159 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:45:54,499 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:45:54,903 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:14,138 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:14,474 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:14,824 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:15,257 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:15,598 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:15,976 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:16,385 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:49:16,793 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:41,116 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:41,627 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:41,954 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:42,462 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:42,858 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:43,235 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:43,736 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:57:44,140 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-27 10:58:38,049 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,050 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,056 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,057 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,059 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,071 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,071 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,072 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 10:58:38,073 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 10:58:38,074 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\IntervalSampling.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:00:22,351 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,353 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,354 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,355 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,358 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,359 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,361 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,362 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,366 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:00:22,367 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:00:22,369 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\IntervalSampling.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 65, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 58, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 47, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:04:56,227 ERROR Subject: 10213, ItemGroup: ig_IC_01_A, Item: DSSTDAT_IC, Error: [value] is required
+NoneType: None
+2025-06-27 11:04:56,228 ERROR Unexpected error importing form 10213: Form import failed for subject 10213
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10213
+2025-06-27 11:04:56,230 ERROR Form import failed for subject 10213
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\InformedConsent.py", line 112, in <module>
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10213
+2025-06-27 11:05:22,262 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,263 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,263 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,264 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,264 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,264 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,265 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,265 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,265 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:05:22,266 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:05:22,269 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\IntervalSampling.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:18:35,503 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,505 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,506 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,507 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,509 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,510 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,511 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,511 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,511 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:18:35,512 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:18:35,513 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\IntervalSampling.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:23:36,770 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,771 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TPTSP_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,771 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: DAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,772 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: TIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,772 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENDAT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,772 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: ENTIM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,773 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CEWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,773 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: CFWT_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,774 ERROR Subject: 10111, ItemGroup: ig_SAMP_INT_01_A, Item: COM_INT, Error: The update was not attempted due to another error
+NoneType: None
+2025-06-27 11:23:36,775 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:23:36,777 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\IntervalSampling.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-27 11:33:25,482 ERROR Unexpected error importing form 10112: Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112
+2025-06-27 11:33:25,485 ERROR Form import failed for subject 10112
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\IntervalSampling.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10112

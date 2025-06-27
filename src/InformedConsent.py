@@ -1,61 +1,49 @@
 import json
-from dotenv import load_dotenv
-import requests
-import os
-import pandas as pd
-import boto3
-from dateConv import convert_date_format
-from error_log import FormDataError, APIError, FileNotFoundError, InvalidSessionIDError, log_error, check_file_exists
-from io import StringIO
-from api_utils import import_form
+from utils.error_log_utils import (
+    FormDataError, APIError, InvalidSessionIDError, log_error, check_file_exists
+)
+from utils.api_utils import import_form
+from utils.s3_utils import read_s3_csv
+from utils.config_utils import (
+    API_VERSION, BASE_URL, STUDY_NAME, STUDY_COUNTRY, SITE,
+    AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, BUCKET_NAME,
+    FILE_NAMES, SESSION_FILE
+)
+from utils.form_config_utils import FORM_CONFIGS
+from utils.data_utils import (
+    validate_columns, rename_columns, preprocess_dataframe, apply_value_mappings
+)
+from utils.dateConv_utils import convert_date_format
 
-# Load environment variables
-load_dotenv()
-
-# Variables
-API_VERSION = os.getenv("API_VERSION")
-BASE_URL = os.getenv("BASE_URL")
-SESSION_FILE = "session_id.txt"
-# SESSION_FILE = '/opt/airflow/scripts/session_id.txt'
+check_file_exists(SESSION_FILE)
 with open(SESSION_FILE) as f:
     SESSION_ID = f.read().strip()
 
-print(f"Session ID: {SESSION_ID}")  # Debugging line to check SESSION_ID
-study_name = os.getenv("Study_name")
-study_country = os.getenv("Study_country")
-site = os.getenv("site")
-aws_access = os.getenv("AWS_ACCESS_KEY_ID")
-aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
-file_name = os.getenv("Event_IC")
-bucket_name = os.getenv("bucket_name")
+form_config = FORM_CONFIGS["IC"]
 
-# Read consent data from S3
-s3 = boto3.client('s3', aws_access_key_id=aws_access, aws_secret_access_key=aws_secret)
-try:
-    response = s3.get_object(Bucket=bucket_name, Key=file_name)
-    file_content = response['Body'].read().decode('utf-8')
-    df = pd.read_csv(StringIO(file_content), delimiter='|', dtype=str)
-except FileNotFoundError as e:
-    log_error(e)
-    raise
+# Read data from S3
+df = read_s3_csv(
+    bucket=BUCKET_NAME,
+    key=FILE_NAMES["ic"],
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    delimiter='|'
+)
 
-# Data preprocessing
-df["Informed Consent Obtained"] = df["Informed Consent Obtained"].map({"Yes": "Y", "No": "N"})
-df["Informed Consent Type"] = df["Informed Consent Type"].map({"Main": "MAIN"})
-df = df.rename(columns={
-    'Subject Number': 'subject',
-    'Informed Consent Type': 'DSSCAT_IC',
-    'Informed Consent Version ID': 'DSREFID_IC',
-    'Informed Consent Obtained': 'IC',
-    'Informed Consent Date': 'DSSTDAT_IC'
-})
+# Validate and rename columns
+validate_columns(df, form_config["required_columns"])
+df = rename_columns(df, form_config["rename_map"])
 
-def preprocess_dataframe(df):
+# Apply value mappings
+df = apply_value_mappings(df, form_config)
+df = df.fillna("")
+
+# Preprocess (date conversion)
+def my_preprocess(df):
     df["DSSTDAT_IC"] = df["DSSTDAT_IC"].apply(convert_date_format)
     return df
 
-df = preprocess_dataframe(df)
-df = df.fillna("")
+df = preprocess_dataframe(df, preprocess_funcs=[my_preprocess])
 
 # Build payloads: one form per consent record, with form_sequence per subject
 json_payloads = []
@@ -71,7 +59,7 @@ for idx, row in df.iterrows():
     form_sequence = subject_form_counter[subject]
 
     itemgroup = {
-        "itemgroup_name": "ig_IC_01_A",
+        "itemgroup_name": form_config["itemgroup_name"],
         "itemgroup_sequence": 1,
         "items": [
             {"item_name": "DSSCAT_IC", "value": row['DSSCAT_IC']},
@@ -82,18 +70,18 @@ for idx, row in df.iterrows():
     }
 
     json_body = {
-        "study_name": study_name,
+        "study_name": STUDY_NAME,
         "reopen": True,
         "submit": True,
         "change_reason": "Updated by the integration",
         "externally_owned": True,
         "form": {
-            "study_country": study_country,
-            "site": site,
+            "study_country": STUDY_COUNTRY,
+            "site": SITE,
             "subject": subject,
-            "eventgroup_name": "eg_COMMON",
-            "event_name": "ev_COMMON",
-            "form_name": "IC_01_v002",
+            "eventgroup_name": form_config["eventgroup_name"],
+            "event_name": form_config["event_name"],
+            "form_name": form_config["form_name"],
             "form_sequence": form_sequence,
             "itemgroups": [itemgroup]
         }
@@ -109,12 +97,12 @@ headers = {
 api_endpoint = f"{BASE_URL}/api/{API_VERSION}/app/cdm/forms/actions/setdata"
 
 def validate_form_data(payload):
-    # Example: check required fields
     form = payload.get("form", {})
     required_fields = ["study_country", "site", "subject", "eventgroup_name", "event_name", "form_name"]
     for field in required_fields:
         if not form.get(field):
             print(f"Validation error: {field} is missing in form for subject {form.get('subject')}")
+            log_error(f"Validation error: {field} is missing in form for subject {form.get('subject')}")
             return False
     return True
 
@@ -127,4 +115,4 @@ for payload in json_payloads:
         log_error(e)
     except Exception as e:
         print(f"Unexpected error: {e}")
-        log_error(e)
+        log_error(e) 

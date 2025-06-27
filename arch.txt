@@ -1,0 +1,192 @@
+Great question — integrating **Apache Airflow** into your architecture significantly improves scheduling, orchestration, and observability of your workflows. If you decide to use **Airflow**, the architecture would shift slightly to center around **Airflow DAGs** (Directed Acyclic Graphs) as the control layer.
+
+---
+
+## 🧩 **Updated High-Level Architecture Using Apache Airflow**
+
+---
+
+### ✅ **What Changes with Airflow?**
+
+| Feature                     | Without Airflow            | With Airflow                    |
+| --------------------------- | -------------------------- | ------------------------------- |
+| Orchestration               | OpenShift CronJob / Tekton | Apache Airflow DAGs             |
+| Scheduling                  | Cron or EventBridge        | Airflow Scheduler               |
+| Workflow visibility         | Manual/Log-based           | Airflow UI & logs               |
+| Retry / dependency handling | Manual or script-based     | Built-in via DAG task logic     |
+| Notification / alerting     | Custom scripting           | Airflow email/Slack integration |
+
+---
+
+## 🔧 **Updated Architectural Components**
+
+### 1. **Airflow DAG Orchestrator** (New)
+
+* **Runs on**: OpenShift (via Helm chart or Astro/Amazon MWAA).
+* **Function**: Coordinates the end-to-end process:
+
+  * Detect files in S3.
+  * Launch tasks to download, validate, transform, and import.
+  * Archive and log results.
+* **Bonus**: Easily extend to handle other studies/sites/forms by parameterizing DAGs.
+
+---
+
+### 2. **Airflow DAG Tasks**
+
+Each task in the DAG represents a logical step in the workflow:
+
+```text
+[Check S3] --> [Download] --> [Validate/Transform] --> [Import to Veeva] --> [Archive + Log]
+```
+
+* **Sensors**: `S3KeySensor` for new files.
+* **Operators**:
+
+  * `PythonOperator` for custom logic.
+  * `HttpOperator` or `PythonOperator` for Veeva CDMS API integration.
+  * `S3CopyOperator` for archiving.
+
+---
+
+### 3. **DAG Scheduling & Triggers**
+
+* **Trigger types**:
+
+  * Scheduled (e.g., every 30 mins).
+  * S3 Event-Driven (via Airflow TriggerDagRunOperator + Lambda, if using MWAA).
+* **Retry policies**, **SLAs**, and **failure alerts** are now defined declaratively in the DAG.
+
+---
+
+### 4. **Revised S3 Structure** (unchanged)
+
+```text
+s3://clinical-data-forms/
+├── incoming/
+├── processing/
+├── archive/
+└── failed/
+```
+
+---
+
+### 5. **CI/CD (unchanged, but extended)**
+
+* DAGs are stored in Bitbucket.
+* Jenkins pipelines deploy DAGs to Airflow.
+* DAG versioning and rollout handled via container-based DAG deployment or volume mounts.
+
+---
+
+## 📐 **Updated Architecture Diagram**
+
+```text
++---------------------+
+|     AWS S3 Bucket   |
+|   (incoming/)       |
++----------+----------+
+           |
+           v
++------------------------+
+| Apache Airflow DAG     |  <-- Central Orchestration
+| (Running on OpenShift) |
++------------------------+
+     |     |     |     |
+     v     v     v     v
+ [Download] [Validate] [Transform] [Import to Veeva]
+                               |
+                               v
+                      +------------------+
+                      |  Veeva CDMS API  |
+                      +------------------+
+                               |
+                               v
+                          +---------+
+                          | Archive |
+                          +---------+
+```
+
+---
+
+## 🧱 **Airflow DAG Code Skeleton (Python)**
+
+```python
+with DAG(
+    dag_id="s3_to_veeva_pipeline",
+    schedule_interval="*/30 * * * *",
+    default_args=default_args,
+    catchup=False
+) as dag:
+
+    check_s3 = S3KeySensor(
+        task_id='check_for_new_file',
+        bucket_name='clinical-data-forms',
+        bucket_key='incoming/*.csv',
+        aws_conn_id='aws_default'
+    )
+
+    download = PythonOperator(
+        task_id='download_file',
+        python_callable=download_from_s3
+    )
+
+    validate = PythonOperator(
+        task_id='validate_data',
+        python_callable=validate_data
+    )
+
+    transform = PythonOperator(
+        task_id='transform_data',
+        python_callable=transform_for_veeva
+    )
+
+    import_to_veeva = PythonOperator(
+        task_id='import_to_veeva',
+        python_callable=import_data_to_veeva
+    )
+
+    archive = PythonOperator(
+        task_id='archive_file',
+        python_callable=archive_file
+    )
+
+    check_s3 >> download >> validate >> transform >> import_to_veeva >> archive
+```
+
+---
+
+## 🔒 **Security and Secrets with Airflow**
+
+* Use Airflow **Connections** for:
+
+  * AWS credentials (`aws_default`)
+  * Veeva API auth (stored as connection with token headers)
+* Secrets can be injected via:
+
+  * OpenShift secrets + env vars
+  * Airflow variables / secret backends (e.g., AWS Secrets Manager)
+
+---
+
+## ✅ Summary
+
+| Capability           | With Airflow           |
+| -------------------- | ---------------------- |
+| Orchestration        | Airflow DAGs           |
+| Scheduling           | Airflow scheduler      |
+| Logging              | Airflow logs + S3 logs |
+| Retry/Error Handling | Built-in DAG retries   |
+| Alerting             | Airflow + Email/Slack  |
+| CI/CD                | Bitbucket + Jenkins    |
+| Dev Platform         | OpenShift              |
+
+---
+
+Would you like me to provide:
+
+* A full example DAG Python file?
+* A Helm-based Airflow deployment setup on OpenShift?
+* Integration test plan for the pipeline?
+
+Let me know your next step!
