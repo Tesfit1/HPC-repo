@@ -411,7 +411,7 @@ FORM_CONFIGS = {
 "VitalSignTreatment": {
     "required_columns": [
         'Subject Number', 'Folder', 'Planned Time Point', 'Date of Measurement', 'Time of Measurement',
-        'Weight', 'Pulse Rate', 'Systolic Blood Pressure', 'Diastolic Blood Pressure', 'Respiratory Rate', 'Temperature'
+         'Systolic Blood Pressure', 'Diastolic Blood Pressure', 'Respiratory Rate', 'Temperature'
     ],
     "rename_map": {
         'Subject Number': 'subject',
@@ -430,12 +430,12 @@ FORM_CONFIGS = {
         "VSTPT_1": "VSTPT_1",
         "VSDAT_1": "VSDAT_1",
         "VSTIM_1": "VSTIM_1",
-        "WEIGHT_1": "WEIGHT_1",
-        "PULSE_1": "PULSE_1",
+        # "WEIGHT_1": "WEIGHT_1",
+        # "PULSE_1": "PULSE_1",
         "SYSBP_1": "SYSBP_1",
         "DIABP_1": "DIABP_1",
-        "RESP_1": "RESP_1",
-        "TEMP_1": "TEMP_1"
+        # "RESP_1": "RESP_1",
+        # "TEMP_1": "TEMP_1"
     },
     "unit_mappings": {
         "WEIGHT_1": "Kilogram",

@@ -1,0 +1,1160 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-8.4.1, pluggy-1.6.0
+rootdir: C:\Users\tesfi\OneDrive\Documents\python\HPC-repo
+plugins: anyio-4.7.0
+collected 20 items
+
+src\tests\integration_test.py ....F.F.F.FF.....F.F                       [100%]
+
+================================== FAILURES ===================================
+_______________________ test_script_import_and_run[EOS] _______________________
+
+script_name = 'EOS'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235D77AE00>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_EOS0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+>               importlib.import_module(f"src.{script_name}")
+
+src\tests\integration_test.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+src\EOS.py:39: in <module>
+    split_columns = df['DSNCOMP_EOS'].str.split(',', expand=True)
+                    ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self =   DSNCOMP_EOS DSNCOMP_EOS
+0       dummy       dummy, name = 'str'
+
+    @final
+    def __getattr__(self, name: str):
+        """
+        After regular attribute access, try looking up the name
+        This allows simpler access to columns for interactive use.
+        """
+        # Note: obj.x will always call obj.__getattribute__('x') prior to
+        # calling obj.__getattr__('x').
+        if (
+            name not in self._internal_names_set
+            and name not in self._metadata
+            and name not in self._accessors
+            and self._info_axis._can_hold_identifiers_and_holds_name(name)
+        ):
+            return self[name]
+>       return object.__getattribute__(self, name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'DataFrame' object has no attribute 'str'. Did you mean: 'std'?
+
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\generic.py:6299: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+script_name = 'EOS'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235D77AE00>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_EOS0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+                importlib.import_module(f"src.{script_name}")
+            except Exception as e:
+>               pytest.fail(f"Script {script_name} raised an exception: {e}")
+E               Failed: Script EOS raised an exception: 'DataFrame' object has no attribute 'str'
+
+src\tests\integration_test.py:119: Failed
+_________________ test_script_import_and_run[InformedConsent] _________________
+
+script_name = 'InformedConsent'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235D7D2350>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Inf0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+>               importlib.import_module(f"src.{script_name}")
+
+src\tests\integration_test.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+src\InformedConsent.py:34: in <module>
+    validate_columns(df, form_config["required_columns"])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+df =   subject   site
+0   dummy  dummy
+required_columns = ['Subject Number', 'Informed Consent Type', 'Informed Consent Version ID', 'Informed Consent Obtained', 'Informed Consent Date']
+
+    def validate_columns(df, required_columns):
+        """Raise KeyError if any required columns are missing."""
+        missing = [col for col in required_columns if col not in df.columns]
+        if missing:
+>           raise KeyError(f"Missing columns in input data: {missing}")
+E           KeyError: "Missing columns in input data: ['Subject Number', 'Informed Consent Type', 'Informed Consent Version ID', 'Informed Consent Obtained', 'Informed Consent Date']"
+
+src\utils\data_utils.py:7: KeyError
+
+During handling of the above exception, another exception occurred:
+
+script_name = 'InformedConsent'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235D7D2350>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Inf0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+                importlib.import_module(f"src.{script_name}")
+            except Exception as e:
+>               pytest.fail(f"Script {script_name} raised an exception: {e}")
+E               Failed: Script InformedConsent raised an exception: "Missing columns in input data: ['Subject Number', 'Informed Consent Type', 'Informed Consent Version ID', 'Informed Consent Obtained', 'Informed Consent Date']"
+
+src\tests\integration_test.py:119: Failed
+_____________ test_script_import_and_run[SetEventDateEndOfStudy] ______________
+
+script_name = 'SetEventDateEndOfStudy'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235DABCC80>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Set0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+>               importlib.import_module(f"src.{script_name}")
+
+src\tests\integration_test.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+src\SetEventDateEndOfStudy.py:30: in <module>
+    df = df[event_config["required_columns"]]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\frame.py:4108: in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexes\base.py:6200: in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Index(['subject', 'site'], dtype='object')
+key = Index(['Subject Number', 'Informed Consent Date'], dtype='object')
+indexer = array([-1, -1]), axis_name = 'columns'
+
+    def _raise_if_missing(self, key, indexer, axis_name: str_t) -> None:
+        """
+        Check that indexer can be used to return a result.
+    
+        e.g. at least one element was found,
+        unless the list of keys was actually empty.
+    
+        Parameters
+        ----------
+        key : list-like
+            Targeted labels (only used to show correct error message).
+        indexer: array-like of booleans
+            Indices corresponding to the key,
+            (with -1 indicating not found).
+        axis_name : str
+    
+        Raises
+        ------
+        KeyError
+            If at least one key was requested but none was found.
+        """
+        if len(key) == 0:
+            return
+    
+        # Count missing values
+        missing_mask = indexer < 0
+        nmissing = missing_mask.sum()
+    
+        if nmissing:
+            if nmissing == len(indexer):
+>               raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+E               KeyError: "None of [Index(['Subject Number', 'Informed Consent Date'], dtype='object')] are in the [columns]"
+
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexes\base.py:6249: KeyError
+
+During handling of the above exception, another exception occurred:
+
+script_name = 'SetEventDateEndOfStudy'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235DABCC80>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Set0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+                importlib.import_module(f"src.{script_name}")
+            except Exception as e:
+>               pytest.fail(f"Script {script_name} raised an exception: {e}")
+E               Failed: Script SetEventDateEndOfStudy raised an exception: "None of [Index(['Subject Number', 'Informed Consent Date'], dtype='object')] are in the [columns]"
+
+src\tests\integration_test.py:119: Failed
+_______________ test_script_import_and_run[TreatmentSummaryV2] ________________
+
+script_name = 'TreatmentSummaryV2'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235D79F770>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Tre0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+>               importlib.import_module(f"src.{script_name}")
+
+src\tests\integration_test.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+src\TreatmentSummaryV2.py:33: in <module>
+    validate_columns(df, form_config["required_columns"])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+df =   subject   site
+0   dummy  dummy
+required_columns = ['Subject Number', 'Subject completed', 'Treatment discontinuation decision', 'Primary trt discontinuation reason', 'Reason Subject Not Treated']
+
+    def validate_columns(df, required_columns):
+        """Raise KeyError if any required columns are missing."""
+        missing = [col for col in required_columns if col not in df.columns]
+        if missing:
+>           raise KeyError(f"Missing columns in input data: {missing}")
+E           KeyError: "Missing columns in input data: ['Subject Number', 'Subject completed', 'Treatment discontinuation decision', 'Primary trt discontinuation reason', 'Reason Subject Not Treated']"
+
+src\utils\data_utils.py:7: KeyError
+
+During handling of the above exception, another exception occurred:
+
+script_name = 'TreatmentSummaryV2'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235D79F770>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Tre0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+                importlib.import_module(f"src.{script_name}")
+            except Exception as e:
+>               pytest.fail(f"Script {script_name} raised an exception: {e}")
+E               Failed: Script TreatmentSummaryV2 raised an exception: "Missing columns in input data: ['Subject Number', 'Subject completed', 'Treatment discontinuation decision', 'Primary trt discontinuation reason', 'Reason Subject Not Treated']"
+
+src\tests\integration_test.py:119: Failed
+__________________ test_script_import_and_run[VisitFourDate] __________________
+
+script_name = 'VisitFourDate'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235F735570>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Vis0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+>               importlib.import_module(f"src.{script_name}")
+
+src\tests\integration_test.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+src\VisitFourDate.py:30: in <module>
+    df = df[event_config["required_columns"]]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\frame.py:4108: in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexes\base.py:6200: in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Index(['subject', 'site'], dtype='object')
+key = Index(['Subject Number', 'Informed Consent Date'], dtype='object')
+indexer = array([-1, -1]), axis_name = 'columns'
+
+    def _raise_if_missing(self, key, indexer, axis_name: str_t) -> None:
+        """
+        Check that indexer can be used to return a result.
+    
+        e.g. at least one element was found,
+        unless the list of keys was actually empty.
+    
+        Parameters
+        ----------
+        key : list-like
+            Targeted labels (only used to show correct error message).
+        indexer: array-like of booleans
+            Indices corresponding to the key,
+            (with -1 indicating not found).
+        axis_name : str
+    
+        Raises
+        ------
+        KeyError
+            If at least one key was requested but none was found.
+        """
+        if len(key) == 0:
+            return
+    
+        # Count missing values
+        missing_mask = indexer < 0
+        nmissing = missing_mask.sum()
+    
+        if nmissing:
+            if nmissing == len(indexer):
+>               raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+E               KeyError: "None of [Index(['Subject Number', 'Informed Consent Date'], dtype='object')] are in the [columns]"
+
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexes\base.py:6249: KeyError
+
+During handling of the above exception, another exception occurred:
+
+script_name = 'VisitFourDate'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235F735570>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Vis0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+                importlib.import_module(f"src.{script_name}")
+            except Exception as e:
+>               pytest.fail(f"Script {script_name} raised an exception: {e}")
+E               Failed: Script VisitFourDate raised an exception: "None of [Index(['Subject Number', 'Informed Consent Date'], dtype='object')] are in the [columns]"
+
+src\tests\integration_test.py:119: Failed
+_______________ test_script_import_and_run[VitalSignTreatment] ________________
+
+script_name = 'VitalSignTreatment'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235DB716D0>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Vit1')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+>               importlib.import_module(f"src.{script_name}")
+
+src\tests\integration_test.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+src\VitalSignTreatment.py:37: in <module>
+    df.loc[df['VSDAT_1'].notnull(), 'VSDAT_1'] = "Y"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexing.py:907: in __setitem__
+    indexer = self._get_setitem_indexer(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexing.py:774: in _get_setitem_indexer
+    return self._convert_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexing.py:989: in _convert_tuple
+    keyidx = [self._convert_to_indexer(k, axis=i) for i, k in enumerate(key)]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexing.py:1522: in _convert_to_indexer
+    return self._get_listlike_indexer(key, axis)[1]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexing.py:1558: in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexes\base.py:6200: in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = RangeIndex(start=0, stop=1, step=1)
+key = Index([('V', 'S', 'D', 'A', 'T', '_', '1'), ('V', 'S', 'D', 'A', 'T', '_', '1')], dtype='object')
+indexer = array([-1, -1]), axis_name = 'index'
+
+    def _raise_if_missing(self, key, indexer, axis_name: str_t) -> None:
+        """
+        Check that indexer can be used to return a result.
+    
+        e.g. at least one element was found,
+        unless the list of keys was actually empty.
+    
+        Parameters
+        ----------
+        key : list-like
+            Targeted labels (only used to show correct error message).
+        indexer: array-like of booleans
+            Indices corresponding to the key,
+            (with -1 indicating not found).
+        axis_name : str
+    
+        Raises
+        ------
+        KeyError
+            If at least one key was requested but none was found.
+        """
+        if len(key) == 0:
+            return
+    
+        # Count missing values
+        missing_mask = indexer < 0
+        nmissing = missing_mask.sum()
+    
+        if nmissing:
+            if nmissing == len(indexer):
+>               raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+E               KeyError: "None of [Index([('V', 'S', 'D', 'A', 'T', '_', '1'), ('V', 'S', 'D', 'A', 'T', '_', '1')], dtype='object')] are in the [index]"
+
+..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\indexes\base.py:6249: KeyError
+
+During handling of the above exception, another exception occurred:
+
+script_name = 'VitalSignTreatment'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235DB716D0>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_Vit1')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+                importlib.import_module(f"src.{script_name}")
+            except Exception as e:
+>               pytest.fail(f"Script {script_name} raised an exception: {e}")
+E               Failed: Script VitalSignTreatment raised an exception: "None of [Index([('V', 'S', 'D', 'A', 'T', '_', '1'), ('V', 'S', 'D', 'A', 'T', '_', '1')], dtype='object')] are in the [index]"
+
+src\tests\integration_test.py:119: Failed
+__________________ test_script_import_and_run[withdrawal_IC] __________________
+
+script_name = 'withdrawal_IC'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235DB879D0>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_wit0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+>               importlib.import_module(f"src.{script_name}")
+
+src\tests\integration_test.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1520.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:1026: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+src\withdrawal_IC.py:34: in <module>
+    validate_columns(df, form_config["required_columns"])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+df =   subject Informed Consent Record Withdrawal Date
+0   dummy                   dummy           dummy
+required_columns = ['Subject Number', 'Informed Consent Type', 'Informed Consent Version ID', 'Informed Consent Obtained', 'Informed Consent Date']
+
+    def validate_columns(df, required_columns):
+        """Raise KeyError if any required columns are missing."""
+        missing = [col for col in required_columns if col not in df.columns]
+        if missing:
+>           raise KeyError(f"Missing columns in input data: {missing}")
+E           KeyError: "Missing columns in input data: ['Subject Number', 'Informed Consent Type', 'Informed Consent Version ID', 'Informed Consent Obtained', 'Informed Consent Date']"
+
+src\utils\data_utils.py:7: KeyError
+
+During handling of the above exception, another exception occurred:
+
+script_name = 'withdrawal_IC'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002235DB879D0>
+tmp_path = WindowsPath('C:/Users/tesfi/AppData/Local/Temp/pytest-of-tesfi/pytest-30/test_script_import_and_run_wit0')
+
+    @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
+    def test_script_import_and_run(script_name, monkeypatch, tmp_path):
+        try:
+            form_config_utils = importlib.import_module("utils.form_config_utils")
+            config_key = SCRIPT_CONFIG_MAP.get(script_name, script_name)
+            form_config = form_config_utils.FORM_CONFIGS.get(config_key)
+            if form_config and "required_columns" in form_config:
+                required_columns = form_config["required_columns"]
+            else:
+                required_columns = []
+        except Exception:
+            required_columns = []
+    
+        extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
+        force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
+    
+        # Fallback to ["subject", "site"] if no required columns
+        base_columns = required_columns if required_columns else ["subject", "site"]
+        all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+        dummy_data = {col: ["dummy"] for col in all_columns}
+        df = pd.DataFrame(dummy_data)
+    
+        # Patch boto3.client for scripts that use it directly
+        if script_name == "VitalSignTreatment":
+            mock_body = MagicMock()
+            # Ensure the mock file content has all columns used in the script
+            mock_body.read.return_value = (
+                b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
+                b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
+            )
+            mock_s3 = MagicMock()
+            mock_s3.get_object.return_value = {"Body": mock_body}
+            boto3_client_patch = patch("boto3.client", return_value=mock_s3)
+        else:
+            boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    
+        with patch("utils.s3_utils.read_s3_csv", return_value=df), \
+             patch("utils.api_utils.import_form", return_value=None), \
+             patch("utils.api_utils.import_forms_bulk", return_value=None), \
+             patch("requests.post", return_value=MagicMock(json=lambda: {})), \
+             patch("requests.get", return_value=MagicMock(json=lambda: {})), \
+             patch("builtins.open", new_callable=MagicMock), \
+             patch("utils.error_log_utils.check_file_exists", return_value=True), \
+             boto3_client_patch:
+            monkeypatch.setenv("SESSION_FILE", str(tmp_path / "session_id.txt"))
+            try:
+                importlib.import_module(f"src.{script_name}")
+            except Exception as e:
+>               pytest.fail(f"Script {script_name} raised an exception: {e}")
+E               Failed: Script withdrawal_IC raised an exception: "Missing columns in input data: ['Subject Number', 'Informed Consent Type', 'Informed Consent Version ID', 'Informed Consent Obtained', 'Informed Consent Date']"
+
+src\tests\integration_test.py:119: Failed
+=========================== short test summary info ===========================
+FAILED src/tests/integration_test.py::test_script_import_and_run[EOS] - Faile...
+FAILED src/tests/integration_test.py::test_script_import_and_run[InformedConsent]
+FAILED src/tests/integration_test.py::test_script_import_and_run[SetEventDateEndOfStudy]
+FAILED src/tests/integration_test.py::test_script_import_and_run[TreatmentSummaryV2]
+FAILED src/tests/integration_test.py::test_script_import_and_run[VisitFourDate]
+FAILED src/tests/integration_test.py::test_script_import_and_run[VitalSignTreatment]
+FAILED src/tests/integration_test.py::test_script_import_and_run[withdrawal_IC]
+======================== 7 failed, 13 passed in 1.38s =========================

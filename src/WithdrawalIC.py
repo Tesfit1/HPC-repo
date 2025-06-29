@@ -19,12 +19,12 @@ check_file_exists(SESSION_FILE)
 with open(SESSION_FILE) as f:
     SESSION_ID = f.read().strip()
 
-form_config = FORM_CONFIGS["IC"]
+form_config = FORM_CONFIGS["WithdrawalIC"]
 
 # Read data from S3
 df = read_s3_csv(
     bucket=BUCKET_NAME,
-    key=FILE_NAMES["ic"],
+    key=FILE_NAMES["wic"],
     aws_access_key_id=AWS_ACCESS_KEY_ID,
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
     delimiter='|'
@@ -38,7 +38,7 @@ df = df.fillna("")
 
 # Preprocess (date conversion)
 def my_preprocess(df):
-    df["DSSTDAT_IC"] = df["DSSTDAT_IC"].apply(convert_date_format)
+    df["DSSTDAT_WIC"] = df["DSSTDAT_WIC"].apply(convert_date_format)
     return df
 
 df = preprocess_dataframe(df, preprocess_funcs=[my_preprocess])
