@@ -29,6 +29,7 @@ df = read_s3_csv(
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
     delimiter='|'
 )
+print("VitalSignTreatment df.columns:", df.columns.tolist())
 validate_columns(df, form_config["required_columns"])
 df = rename_columns(df, form_config["rename_map"])
 

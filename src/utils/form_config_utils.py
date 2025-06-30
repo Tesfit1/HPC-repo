@@ -471,7 +471,7 @@ FORM_CONFIGS = {
                 "eventgroup_name": "eg_COMMON",
                 "event_name": "ev_COMMON",
                 "form_name": "IC_01_v002",
-                "form_sequence": 2
+                "form_sequence": 1
             }
         }
     },

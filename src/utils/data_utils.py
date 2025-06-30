@@ -31,33 +31,48 @@ def preprocess_dataframe(df, preprocess_funcs=None):
 
 def build_json_payloads(df, form_config, study_name, study_country, site):
     payloads = []
-    subject_event_counter = {}
     unit_mappings = form_config.get("unit_mappings", {})
     item_links = form_config.get("item_links", {})
 
-    for _, row in df.iterrows():
-        subject = row['subject']
-        event = row.get('Folder', None)
-        key = (subject, event)
-        if key not in subject_event_counter:
-            subject_event_counter[key] = 1
-        else:
-            subject_event_counter[key] += 1
-        itemgroup_sequence = subject_event_counter[key]
+    subject_event_itemgroup_counter = {}
 
-        eventgroup_name = form_config.get("eventgroup_logic", lambda r: None)(row) if callable(form_config.get("eventgroup_logic")) else form_config.get("eventgroup_name")
-        event_name = form_config.get("event_logic", lambda r: None)(row) if callable(form_config.get("event_logic")) else form_config.get("event_name")
+    for _, row in df.iterrows():
+        subject = row.get("subject", row.get("Subject Number", ""))
+        eventgroup_name = (
+            form_config["eventgroup_logic"](row) if "eventgroup_logic" in form_config and callable(form_config["eventgroup_logic"])
+            else form_config.get("eventgroup_name")
+        )
+        event_name = (
+            form_config["event_logic"](row) if "event_logic" in form_config and callable(form_config["event_logic"])
+            else form_config.get("event_name")
+        )
+
+        key = (subject, eventgroup_name, event_name)
+        itemgroup_sequence = subject_event_itemgroup_counter.get(key, 1)
+        subject_event_itemgroup_counter[key] = itemgroup_sequence + 1
 
         items = []
         for item_name, df_col in form_config["item_mappings"].items():
-            value = row[df_col]
-            item = {"item_name": item_name, "value": value}
-            if item_name in unit_mappings and value not in [None, ""]:
-                item["unit_value"] = unit_mappings[item_name]
-            # Inject item_to_form_link if defined in config
-            if item_name in item_links and "item_to_form_link" in item_links[item_name]:
-                item["item_to_form_link"] = item_links[item_name]["item_to_form_link"]
-            items.append(item)
+            is_link = (
+                item_name in item_links and
+                "item_to_form_link" in item_links[item_name]
+            )
+            value = row.get(df_col, "")
+            if is_link:
+                # For Item to Form Link, do NOT include "value"
+                item = {
+                     "item_name": item_name,
+                    "value": "",
+                     "item_to_form_link": item_links[item_name]["item_to_form_link"]
+        }
+                items.append(item)
+            else:
+                if value in [None, ""]:
+                    continue  # skip empty values for normal items
+                item = {"item_name": item_name, "value": value}
+                if item_name in unit_mappings:
+                    item["unit_value"] = unit_mappings[item_name]
+                items.append(item)
 
         itemgroup = {
             "itemgroup_name": form_config["itemgroup_name"],

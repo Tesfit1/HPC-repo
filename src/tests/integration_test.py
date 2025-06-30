@@ -23,7 +23,7 @@ SCRIPTS_TO_TEST = [
     "VitalSignScreening",
     "VitalSignTreatment",
     "vitalSignEOS",
-    "withdrawal_IC",
+    "WithdrawalIC",
 ]
 
 SCRIPT_CONFIG_MAP = {
@@ -46,7 +46,7 @@ SCRIPT_CONFIG_MAP = {
     "VitalSignScreening": "VitalSignScreening",
     "VitalSignTreatment": "VitalSignTreatment",
     "vitalSignEOS": "VitalSignEOS",
-    "withdrawal_IC": "WithdrawalIC",
+    "WithdrawalIC": "WithdrawalIC",
 }
 
 SCRIPT_EXTRA_COLUMNS = {
@@ -54,7 +54,6 @@ SCRIPT_EXTRA_COLUMNS = {
     "VisitPlaceDate": ["Subject Number", "Folder", "Visit Date"],
     "VisitThreeDate": ["Subject Number", "Informed Consent Date"],
     "VisitTwoDate": ["Subject Number", "Informed Consent Date"],
-    "EOS": ["DSNCOMP_EOS"],
     # Add more as needed for other scripts
 }
 
@@ -62,10 +61,26 @@ SCRIPT_EXTRA_COLUMNS = {
 SCRIPT_FORCE_COLUMNS = {
     "VitalSignTreatment": [
         "Folder", "VSTPT_1", "VSORRES_1", "VSORRESU_1", "VSDAT_1", "VSTIM_1", "SYSBP_1"
-        # Add more if you see more missing in error messages
     ],
-    "EOS": ["DSNCOMP_EOS"],
-    # Add more as needed for other scripts
+    "EOS": [
+        "Subject Number", "EOS Date", "Completed", "Reason Non-Completion", "Death date", "Lost to FUP date", "DSNCOMP_EOS"
+    ],
+    "InformedConsent": [
+        "Subject Number", "Informed Consent Type", "Informed Consent Version ID", "Informed Consent Obtained", "Informed Consent Date"
+    ],
+    "SetEventDateEndOfStudy": [
+        "Subject Number", "Informed Consent Date"
+    ],
+    "TreatmentSummaryV2": [
+        "Subject Number", "Subject completed", "Treatment discontinuation decision", "Primary trt discontinuation reason", "Reason Subject Not Treated"
+    ],
+    "VisitFourDate": [
+        "Subject Number", "Informed Consent Date"
+    ],
+    "withdrawal_IC": [
+        "Subject Number", "Informed Consent Type", "Informed Consent Version ID", "Informed Consent Obtained", "Informed Consent Date"
+    ],
+    # Add more as needed
 }
 
 @pytest.mark.parametrize("script_name", SCRIPTS_TO_TEST)
@@ -84,25 +99,32 @@ def test_script_import_and_run(script_name, monkeypatch, tmp_path):
     extra_columns = SCRIPT_EXTRA_COLUMNS.get(script_name, [])
     force_columns = SCRIPT_FORCE_COLUMNS.get(script_name, [])
 
+    # Only use original/raw column names (not renamed ones)
+    # Remove any renamed columns from force_columns
+    if form_config and "rename_map" in form_config:
+        renamed = set(form_config["rename_map"].values())
+        force_columns = [col for col in force_columns if col not in renamed]
+
     # Fallback to ["subject", "site"] if no required columns
     base_columns = required_columns if required_columns else ["subject", "site"]
     all_columns = list(dict.fromkeys(base_columns + extra_columns + force_columns))
+
+    # If both are present, keep only the one needed by the script
+    if "Subject Number" in all_columns and "subject" in all_columns:
+        all_columns.remove("subject")
+
+    # Remove any remaining duplicates (including DSNCOMP_EOS)
+    seen = set()
+    all_columns = [x for x in all_columns if not (x in seen or seen.add(x))]
+
+    # Assert no duplicates remain
+    assert len(all_columns) == len(set(all_columns)), f"Duplicate columns found: {all_columns}"
+
     dummy_data = {col: ["dummy"] for col in all_columns}
     df = pd.DataFrame(dummy_data)
 
     # Patch boto3.client for scripts that use it directly
-    if script_name == "VitalSignTreatment":
-        mock_body = MagicMock()
-        # Ensure the mock file content has all columns used in the script
-        mock_body.read.return_value = (
-            b"subject|site|VSDAT_1|Folder|VSTPT_1|VSORRES_1|VSORRESU_1|VSTIM_1|SYSBP_1\n"
-            b"A|B|2024-01-01|Screening|Test|120|mmHg|08:00|120\n"
-        )
-        mock_s3 = MagicMock()
-        mock_s3.get_object.return_value = {"Body": mock_body}
-        boto3_client_patch = patch("boto3.client", return_value=mock_s3)
-    else:
-        boto3_client_patch = patch("boto3.client", return_value=MagicMock())
+    boto3_client_patch = patch("boto3.client", return_value=MagicMock())
 
     with patch("utils.s3_utils.read_s3_csv", return_value=df), \
          patch("utils.api_utils.import_form", return_value=None), \
@@ -116,4 +138,5 @@ def test_script_import_and_run(script_name, monkeypatch, tmp_path):
         try:
             importlib.import_module(f"src.{script_name}")
         except Exception as e:
+            print(f"{script_name} df.columns: {df.columns.tolist()}")
             pytest.fail(f"Script {script_name} raised an exception: {e}")

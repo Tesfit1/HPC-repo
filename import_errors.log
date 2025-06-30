@@ -914,3 +914,161 @@ Traceback (most recent call last):
   File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
     raise APIError(f"Form import failed for subject {subject}")
 utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:02:10,463 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: The item at this location is an Item to Form Link. The value node is not used for such items.
+NoneType: None
+2025-06-29 23:02:10,466 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: DSSTDAT_WIC, Error: [value] is required
+NoneType: None
+2025-06-29 23:02:10,467 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:02:10,471 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\WithdrawalIC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:06:28,179 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: [value] is required
+NoneType: None
+2025-06-29 23:06:28,180 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:06:28,182 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\WithdrawalIC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:07:19,727 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: [value] is required
+NoneType: None
+2025-06-29 23:07:19,728 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:07:19,730 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\WithdrawalIC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:13:58,608 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: The item at this location is an Item to Form Link. The value node is not used for such items.
+NoneType: None
+2025-06-29 23:13:58,609 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:13:58,612 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\WithdrawalIC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:14:40,624 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-29 23:14:40,624 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:14:40,626 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\WithdrawalIC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:33:51,835 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-29 23:33:51,836 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:33:51,838 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\WithdrawalIC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:35:23,435 ERROR Subject: 10111, ItemGroup: ig_WIC_01_A, Item: LK_WIC_IC, Error: Unique Form cannot be found with specified keys
+NoneType: None
+2025-06-29 23:35:23,437 ERROR Unexpected error importing form 10111: Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-29 23:35:23,439 ERROR Form import failed for subject 10111
+Traceback (most recent call last):
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\WithdrawalIC.py", line 69, in <module>
+    import_forms_bulk(json_payloads, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 63, in import_forms_bulk
+    import_form(payload, api_endpoint, headers, validate_form_data)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 56, in import_form
+    raise e
+  File "c:\Users\tesfi\OneDrive\Documents\python\HPC-repo\src\utils\api_utils.py", line 45, in import_form
+    raise APIError(f"Form import failed for subject {subject}")
+utils.error_log_utils.APIError: Form import failed for subject 10111
+2025-06-30 00:20:18,042 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-30 00:20:18,361 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-30 00:20:18,695 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-30 00:20:18,994 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-30 00:20:19,319 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-30 00:20:19,622 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-30 00:20:19,918 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None
+2025-06-30 00:20:20,216 ERROR Subject not found in ClinData: 10313 -- skipping.
+NoneType: None

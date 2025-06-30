@@ -36,6 +36,17 @@ def import_form(payload, api_endpoint, headers, validate_form_data=None):
                 if itemgroup.get("responseStatus") == "FAILURE":
                     for item in itemgroup.get("items", []):
                         if item.get("responseStatus") == "FAILURE":
+                            # Special handling for Item to Form Link error
+                            if (
+                                "Item to Form Link" in item.get("errorMessage", "")
+                                and "value node is not used" in item.get("errorMessage", "")
+                            ):
+                                warn_msg = (
+                                    f"WARNING: Item to Form Link '{item.get('item_name')}' should not have a value. "
+                                    f"Check your payload builder to omit 'value' for this item."
+                                )
+                                print(warn_msg)
+                                log_error(warn_msg)
                             error_msg = (
                                 f"Subject: {form.get('subject')}, "
                                 f"ItemGroup: {itemgroup.get('itemgroup_name')}, "
@@ -52,7 +63,6 @@ def import_form(payload, api_endpoint, headers, validate_form_data=None):
     except Exception as e:
         log_error(f"Unexpected error importing form {payload['form']['subject']}: {e}")
         raise e
-
 def import_forms_bulk(payloads, api_endpoint, headers, validate_form_data=None):
     """
     Send multiple form payloads to the API endpoint.
